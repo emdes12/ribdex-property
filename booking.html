@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="https://ribdexglobal.netlify.app/src/images/unforgettable%20journey.png">
+    <meta property="og:description" content="Ribdex Global is an educational travel consult that help to process seamless international educational opportunities across different countries. We help with providing a stress free educational support and educational professional support ranging across different tertiary institution and vocational institution.">
+    <title>Booking || Ribdex Global Concept</title>
+    <link rel="shortcut icon" href="./src/icons/RIBDEX.svg" type="image/x-icon"  />
+    <link href="/src/css/output.css" rel="stylesheet" />
+    <script src="./src/js/script.js" defer></script>
+    <script src="./src/js/booking.js" defer></script>
+  </head>
+  <body
+    class="max-w-screen-xlh-[144440px] bg-green-50 relative overflow-x-hidden"
+  >
+    <!-- Header/nav section -->
+    <header class="z-[19999999] bg-white py-[19px] fixed top-0 right-0 left-0">
+      <!-- logo -->
+      <div class="container px-5 flex mx-auto justify-between items-center">
+        <a href="#">
+          <div class="flex justify-start items-center gap-2.5">
+            <img
+              class="w-10 md:w-20 relative"
+              src="/src/icons/RIBDEX.svg"
+              alt="logo"
+            />
+          </div>
+        </a>
+
+        <!-- desktop nav menu -->
+        <nav>
+          <div class="hidden md:flex justify-start items-center gap-[17px]">
+            <div class="justify-start items-end gap-[10px] flex">
+              <a
+                href="./index.html#"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                home
+              </a>
+              <a
+                href="./index.html#about"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                about
+              </a>
+              <a
+                href="./services.html"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                services
+              </a>
+              <a
+                href="https://blog.ribdexglobal.com"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                blog
+              </a>
+              <a
+                href="./partnership-form.html"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                partnership
+              </a>
+              <a
+                href="./index.html#contact"
+                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+              >
+                contact
+              </a>
+            </div>
+            <a
+              href="https://wa.me/+2348124232695"
+              class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
+            >
+              <div
+                class="px-[20px] py-[16px] bg-orange-600 justify-center items-center gap-2.5 flex"
+              >
+                <div
+                  class="text-white text-xl font-bold font-head uppercase leading-[18px]"
+                >
+                  send a whatsapp DM
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- hamburger menu -->
+          <div id="hamburger-btn" class="md:hidden cursor-pointer">
+            <img src="./src/icons/Frame 38menu.svg" alt="menu-icon" />
+          </div>
+        </nav>
+      </div>
+
+      <!-- mobile -->
+      <div
+        id="mobile-menu"
+        class="absolute bg-white bg-opacity-70 top-full left-0 right-0 h-0 overflow-x-hidden flex flex-col justify-start items-start transition-all ease-in-out duration-[10ms]"
+        style="backdrop-filter: blur(10px)"
+      >
+        <div class="justify-start items-start flex flex-col">
+          <a
+            href="./index.html"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            home
+          </a>
+          <a
+            href="./index.html#about"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            about
+          </a>
+          <a
+            href="./services.html"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            services
+          </a>
+          <a
+            href="https://blog.ribdexglobal.com"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            blog
+          </a>
+          <a
+            href="./partnership-form.html"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            partnership
+          </a>
+          <a
+            href="./index.html#contact"
+            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
+          >
+            contact
+          </a>
+        </div>
+        <a
+          href="https://wa.me/+2348124232695"
+          class="px-[20px] py-[16px] bg-orange-600 justify-start items-center gap-2.5 flex w-[100vw]"
+        >
+          <div
+            class="text-white text-xl font-bold font-head uppercase leading-[18px]"
+          >
+            send a Whatsapp DM
+          </div>
+        </a>
+      </div>
+    </header>
+    
+    <!-- hero & booking section -->
+    <div
+      class="w-full h-[500px] z-[8] overflow-x-hidden pt-[180px] pb-[20px] md:pt-[340px] md:pb-[50px] bg-cover bg-center"
+      style="
+          background-image: url('./src/images/booking\ hero.png');
+          background-position: center;
+      "
+    >
+        <div class="container mx-auto z-[10] pt-[10px] pb-[10px] md:pb-0 px-[30px] md:px-[50px] flex flex-col justify-start items-center gap-[30px] md:gap-[50px] inline-flex">
+            <h1 style="text-shadow: 0px 4px 10.2px rgba(0, 0, 0, 0.57);" class="self-stretch text-center  text-white text-[35px] md:text-[95px] font-bold font-head uppercase leading-[28px] md:leading-[48.60px]">secure your spot for success!</h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto">
+          <!-- booking container -->
+          <div class="book-container w-full flex flex-col gap-[10px] md:gap-[30px]">
+            <h1 class="text-center text-green-700 text-[25px] md:text-[54px] font-head font-bold uppercase">Book a session with us</h1>
+
+            <!-- progress bar -->
+            <div class="hidden md:flex justify-around items-center md:px-[50px]">
+              <span class="uppercase text-[12px] md:text-[30px] font-head text-center">Select services</span>
+              <span class="uppercase text-[22px] md:text-[30px] font-head text-center">&gt</span>
+              <span class="uppercase text-[12px] md:text-[30px] font-head text-center">Complete the form</span>
+              <span class="uppercase text-[22px] md:text-[30px] font-head text-center">&gt</span>
+              <span class="uppercase text-[12px] md:text-[30px] font-head text-center">Message Status</span>
+            </div>
+
+            <!-- select service -->
+            <div id="pickservice">
+              <div class="font-head text-bold md:hidden text-white">Select a Service</div>
+              <div class="flex flex-wrap justify-between items-center gap-[6px] md:gap-[10px]">
+                <a href="#education"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">Educational consultancy</a>
+                <a href="#travel"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">travel consultancy</a>
+                <a href="#flight"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">flight booking</a>
+                <a href="#hospital"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">hospitality industry</a>
+                <a href="#transport"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">transportation services</a>
+                <a href="#desdev"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">web design & development</a>
+                <a href="#appdev"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">app development</a>
+                <a href="#hosting"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">web hosting</a>
+                <a href="#vehicle"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">vehicle tracking</a>
+                <a href="#property"  class="w-[105px] cursor-pointer md:w-[200px] bg-orange-600 text-white text-[14px] md:text-[28px] p-[12px] text-center uppercase font-head font-bold">Real Estate Services</a>
+              </div>
+            </div>
+            
+            <!-- fill the form section -->
+            <form id="education" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden" action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Educational</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Educational Consultancy">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="academic_background" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Academic Background:">
+              <input type="text" name="field" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Desired Program/Field of study:">
+              <input type="text" name="university_preffered" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="University Preferred:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="travel" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Travel Consultancy</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Travel Consultancy">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="number" name="number_of_travelers" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Numbers of Travelers:">
+              <input type="date" name="travel_dates" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Travel Date:">
+              <input type="text" name="destination_preffered" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Destination Preferred:">
+              <input type="number" name="budget" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="budget:">
+              <input type="text" name="travel_style_preferences" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Travel Style Preference: (e.g adventure, relaxation, cultural immersion)">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="flight" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Flight Booking Service</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Flight Booking Service">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="departure_city" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Departure City and Airport:">
+              <input type="text" name="arrival_city" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Arrival City and Airport:">
+              <input type="number" name="passengers" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Number of Passengers:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (Departure date and time, Return date and time (if applicable), Baggage information (number of bags, weight) and others)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="hospital" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Hospitality Industry</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Hospitality Industry">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="hotel_resort" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Desired location or specific hotel/resort:">
+              <input type="text" name="check_in_out" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Check-in and check-out dates:">
+              <input type="number" name="number_of_guests" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Number of Guests:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Additional amenities or services required (e.g., spa treatments, dining reservations)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="transport" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Transportation Services</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Transportation Services">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="pickup_location_and_time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Pick-up Location And Time:">
+              <input type="text" name="dropoff_location_and_time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Drop-off Location and Time:">
+              <input type="text" name="vehicle_preferences" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Vehicle preferences (e.g., sedan, SUV, van):">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Additional requests (e.g., child seats, luggage assistance)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="desdev" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Web Design & Development</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Web Design & Development">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="website_url" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Website URL: (if available)">
+              <input type="text" name="desired_functions" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Desired Functionalities:">
+              <input type="text" name="target_audience" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Traget Audience:">
+              <input type="text" name="brand_guidelines" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Brand Guidelines:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="appdev" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">App Development</span></span>
+              <input type="text" name="service_selected" class="hidden" value="App Development">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="app_concept_description" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="App Concept Description:">
+              <input type="text" name="target_platforms" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Target Platforms (iOS, Android, or both):">
+              <input type="text" name="desired_features" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Desired Features:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="hosting" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Web Hosting</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Web Hosting">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="prefered_url" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Web URL:">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="vehicle" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Vehicle Tracking Services</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Vehicle Tracking Services">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="vehicle_information" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Vehicle information (make, model, year):">
+              <input type="text" name="vehicle_identification_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Vehicle Identification Number (VIN):">
+              <input type="text" name="tracking_features" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Desired tracking features (e.g., real-time location, geofencing, fuel monitoring):">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+            <form id="property" method="post" class="w-full md:w-[530px] flex gap-[15px] flex-col items-start hidden"  action="https://script.google.com/macros/s/AKfycbz1WsP0sRc0IHLhUGxqOQFGTcr76CaHA7sACJMQqgB3uP2NathMPjdG-9Jy7qnFPyk6/exec">
+              <span class="font-body">selected service: <span class="font-bold text-orange-600 font-head">Real Estate Services</span></span>
+              <input type="text" name="service_selected" class="hidden" value="Real Estate Services">
+              <input type="text" name="full_name" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Full Name:">
+              <input type="email" name="email_address" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Email Address:">
+              <input type="tel" name="phone_number" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Phone Number:">
+              <input type="text" name="property_type" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Property type (buying or selling):">
+              <input type="text" name="property_location" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Location: (desired/property location)">
+              <input type="text" name="budget" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Budget: (price of your price/budget for the property you want to buy)">
+              <input type="date" name="date" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Preferred Date of Meeting:">
+              <input type="time" name="time" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Time:">
+              <textarea name="message" id="message" rows="4" class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head" placeholder="Message: (other detailes that help during appointment)"></textarea>
+              <button type="submit" class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]">submit</button>
+            </form>
+
+            <!-- success/error message -->
+             <div id="success" class="bg-white w-[300px] md:w-[500px] mx-auto p-[25px] text-black font-body hidden"><br/> Your message was successfully delivered, and our customer representative will get in touch with you soon. Thank you for booking an appointment with us. <br/><br/>Ribdex Teams <br/><br/><br/><br/> You can also send us a message on <a href="https://wa.me/+2348124232695" class="text-orange-600 font-head font-bold">WhatsApp</a></div>
+          </div>
+        </div>
+
+
+
+    <!-- copyright -->
+    <div class="w-full bg-[#125505] py-[20px]">
+      <div
+        class="container mx-auto px-[10px] md:px-[105px] flex justify-between items-center"
+      >
+        <span
+          class="text-white text-[12px] md:text-xl font-light font-head uppercase"
+          >© copyright -
+          <p class="copyright-year inline">2023</p></span
+        >
+        <span
+          class="text-white text-[12px] md:text-xl font-light font-head uppercase"
+          >Designed/Developed By:
+          <a href="https://www.facebook.com/Da.EmperorD/" target="_blank"
+            >Emdes Solutions</a
+          ></span
+        >
+        <div class="flex items-center gap-[3px] md:gap-[10px]">
+          <a
+            href="/facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./src/icons/Group 30facbook.svg"
+              alt="facebook"
+              class="w-[20px] md:w-[30px]"
+            />
+          </a>
+          <a
+            href="/twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./src/icons/Group 31Xtwitter.svg"
+              alt="X"
+              class="w-[20px] md:w-[30px]"
+            />
+          </a>
+          <a
+            href="/instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./src/icons/Group 32instagram.svg"
+              alt="instagram"
+              class="w-[20px] md:w-[30px]"
+            />
+          </a>
+          <a
+            href="http://linkedin.com/ribdex"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./src/icons/Group 33linkedin.svg"
+              alt="linkedin"
+              class="w-[20px] md:w-[30px]"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <style>
+    .book-container {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #fff;
+      padding: 30px;
+      /* border-image-source: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(153, 153, 153, 1), rgba(255, 255, 255, 1), rgba(153, 153, 153, 1)); */
+      /* border-image-slice: 1; */
+      /* background: rgba(255, 255, 255, 0.27); */
+      background-color: #fff;
+      /* backdrop-filter: blur(26.700000762939453px); */
+      /* animation: colorchange 1s infinite; */
+    }
+
+    @keyframes colorchange {
+      from {
+        border-image-source: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(153, 153, 153, 1), rgba(255, 255, 255, 1), rgba(153, 153, 153, 1));
+      }
+      from {
+        border-image-source: linear-gradient(45deg, rgba(153, 153, 153, 1), rgba(255, 255, 255, 1), rgba(153, 153, 153, 1), rgba(255, 255, 255, 1));
+      }
+    }
+  </style>
+</html>
