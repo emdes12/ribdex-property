@@ -2,7 +2,7 @@
   "devDependencies": {
     "tailwindcss": "^3.3.6"
   },
-  "name": "Ribdex Global Concept",
+  "name": "Ribdex Global Real Estate",
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "dependencies": {
