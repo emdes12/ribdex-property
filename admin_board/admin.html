@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="flex items-center justify-center w-[150px]" id="not-logged-in">
+        <a href="./login.html" class="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none">Login/Sign Up</a>
+    </div>
+    <div class="min-h-screen flex" id="dashboard">
+          <!-- Sidebar -->
+          <aside class="w-64 bg-white shadow-lg">
+            <div class="px-6 py-4">
+              <img src="../src/icons/RIBDEX.svg" style="width: 40px;">
+            </div>
+            <nav class="mt-8 space-y-4">
+              <a href="#" class="flex items-center px-6 py-3 bg-indigo-100 text-indigo-600">
+                <span class="material-icons"><img src="../src/icons/216242_home_icon.svg"></span>
+                <span class="ml-3">Properties</span>
+              </a>
+              <a href="./visit_req.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                <span class="material-icons"><img src="../src/icons/9004671_calendar_date_schedule_event_icon.svg"></span>
+                <span class="ml-3">Visit Requests</span>
+              </a>
+              <a href="./orders.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                <span class="material-icons"><img src="../src/icons/326700_cart_shopping_icon.svg"></span>
+                <span class="ml-3">Reservations</span>
+              </a>
+            </nav>
+          </aside>
+        
+          <!-- Main Content Area -->
+          <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
+              <h1 class="text-xl font-semibold text-gray-700">Dashboard</h1>
+              <div class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/40" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                <span class="text-gray-700">User Name</span>
+              </div>
+            </header>
+        
+            <!-- Main Section -->
+            <main class="p-6 space-y-6">
+              <h2 class="text-2xl font-bold text-gray-700">Properties</h2>
+              <div class="flex flex-row gap-3">
+                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Lands</span>
+                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">House</span>
+                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Rents</span>
+              </div>
+              <!-- Property Cards -->
+              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img src="https://via.placeholder.com/300x200" alt="Property Image" class="w-full h-40 object-cover">
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Property Title</h3>
+                    <p class="mt-1 text-sm text-gray-600">Location: New York, NY</p>
+                    <div class="flex items-center justify-between mt-3">
+                      <span class="text-indigo-600 font-bold">12 Requests</span>
+                      <span class="text-green-600 font-bold">$2000/month</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img src="https://via.placeholder.com/300x200" alt="Property Image" class="w-full h-40 object-cover">
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Luxury Apartment</h3>
+                    <p class="mt-1 text-sm text-gray-600">Location: Los Angeles, CA</p>
+                    <div class="flex items-center justify-between mt-3">
+                      <span class="text-indigo-600 font-bold">8 Requests</span>
+                      <span class="text-green-600 font-bold">$1800/month</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img src="https://via.placeholder.com/300x200" alt="Property Image" class="w-full h-40 object-cover">
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Modern Condo</h3>
+                    <p class="mt-1 text-sm text-gray-600">Location: Chicago, IL</p>
+                    <div class="flex items-center justify-between mt-3">
+                      <span class="text-indigo-600 font-bold">15 Orders</span>
+                      <span class="text-green-600 font-bold">$2200/month</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        
+    </div>
+</body>
+<script>
+    const userID = localStorage.getItem("userID")
+    console.log(userID)
+    if(userID){
+        document.getElementById("not-logged-in").classList.add('hidden')
+        document.getElementById("dashboard").classList.remove('hidden')
+    } else {
+        document.getElementById("dashboard").classList.add('hidden')
+        document.getElementById("not-logged-in").classList.remove('hidden')
+    }
+</script>
+</html>

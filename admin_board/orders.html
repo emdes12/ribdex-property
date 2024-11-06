@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Reservation List</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-lg">
+    <div class="px-6 py-4">
+      <img src="../src/icons/RIBDEX.svg" style="width: 40px;">
+    </div>
+    <nav class="mt-8 space-y-4">
+      <a href="./admin.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+        <span class="material-icons"><img src="../src/icons/216242_home_icon.svg"></span>
+        <span class="ml-3">Properties</span>
+      </a>
+      <a href="./visit_req.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+        <span class="material-icons"><img src="../src/icons/9004671_calendar_date_schedule_event_icon.svg"></span>
+        <span class="ml-3">Visit Requests</span>
+      </a>
+      <a href="#" class="flex items-center px-6 py-3 bg-indigo-100 text-indigo-600">
+        <span class="material-icons"><img src="../src/icons/326700_cart_shopping_icon.svg"></span>
+        <span class="ml-3">Reservations</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <div class="flex-1 flex flex-col">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
+        <h1 class="text-xl font-semibold text-gray-700">Dashboard</h1>
+        <div class="flex items-center space-x-4">
+          <img src="https://via.placeholder.com/40" alt="Profile Picture" class="w-10 h-10 rounded-full">
+          <span class="text-gray-700">User Name</span>
+        </div>
+      </header>
+
+    <!-- Main Section -->
+    <main class="p-6 space-y-6">
+        <h2 class="text-2xl font-bold text-gray-700">Reservation List</h2>
+  
+        <!-- Property Reservation Lists -->
+        <div class="space-y-8">
+          <!-- Property 1 Reservation List -->
+          <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Property Title 1 - Reservations</h3>
+            <ul class="mt-4 space-y-3">
+              <li class="flex items-center justify-between p-3 bg-gray-100 rounded-lg">
+                <span class="font-medium text-gray-800">John Doe</span>
+                <span class="text-sm text-gray-600">johndoe@example.com</span>
+                <span class="text-sm text-gray-600">+123456789</span>
+                <span class="text-sm text-gray-600">Reserved: Oct 15, 2024</span>
+                <span class="text-sm text-gray-600">Total Units: 4</span>
+              </li>
+              <li class="flex items-center justify-between p-3 bg-gray-100 rounded-lg">
+                <span class="font-medium text-gray-800">Jane Smith</span>
+                <span class="text-sm text-gray-600">janesmith@example.com</span>
+                <span class="text-sm text-gray-600">+987654321</span>
+                <span class="text-sm text-gray-600">Reserved: Oct 16, 2024</span>
+                <span class="text-sm text-gray-600">Total Units: 2</span>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Property 2 Reservation List -->
+          <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Property Title 2 - Reservations</h3>
+            <ul class="mt-4 space-y-3">
+              <li class="flex items-center justify-between p-3 bg-gray-100 rounded-lg">
+                <span class="font-medium text-gray-800">Alice Johnson</span>
+                <span class="text-sm text-gray-600">alicej@example.com</span>
+                <span class="text-sm text-gray-600">+456123789</span>
+                <span class="text-sm text-gray-600">Reserved: Oct 18, 2024</span>
+                <span class="text-sm text-gray-600">Total Units: 3</span>
+              </li>
+              <li class="flex items-center justify-between p-3 bg-gray-100 rounded-lg">
+                <span class="font-medium text-gray-800">Bob Lee</span>
+                <span class="text-sm text-gray-600">boblee@example.com</span>
+                <span class="text-sm text-gray-600">+123789456</span>
+                <span class="text-sm text-gray-600">Reserved: Oct 20, 2024</span>
+                <span class="text-sm text-gray-600">Total Units: 5</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+  </div>
+</body>
+</html>
