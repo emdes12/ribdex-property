@@ -12,40 +12,43 @@
     </div>
     <div class="min-h-screen flex" id="dashboard">
           <!-- Sidebar -->
-          <aside class="w-64 bg-white shadow-lg">
-            <div class="px-6 py-4">
-              <img src="../src/icons/RIBDEX.svg" style="width: 40px;">
-            </div>
-            <nav class="mt-8 space-y-4">
-              <a href="#" class="flex items-center px-6 py-3 bg-indigo-100 text-indigo-600">
-                <span class="material-icons"><img src="../src/icons/216242_home_icon.svg"></span>
-                <span class="ml-3">Properties</span>
-              </a>
-              <a href="./visit_req.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
-                <span class="material-icons"><img src="../src/icons/9004671_calendar_date_schedule_event_icon.svg"></span>
-                <span class="ml-3">Visit Requests</span>
-              </a>
-              <a href="./orders.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
-                <span class="material-icons"><img src="../src/icons/326700_cart_shopping_icon.svg"></span>
-                <span class="ml-3">Reservations</span>
-              </a>
-            </nav>
-          </aside>
+            <aside class="w-64 bg-white shadow-lg">
+              <div class="px-6 py-4">
+                <img src="../src/icons/RIBDEX.svg" style="width: 40px;">
+              </div>
+              <nav class="mt-8 space-y-4">
+                <a href="#" class="flex items-center px-6 py-3 bg-indigo-100 text-indigo-600">
+                  <span class="material-icons"><img src="../src/icons/216242_home_icon.svg"></span>
+                  <span class="ml-3">Properties</span>
+                </a>
+                <a href="./visit_req.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                  <span class="material-icons"><img src="../src/icons/9004671_calendar_date_schedule_event_icon.svg"></span>
+                  <span class="ml-3">Visit Requests</span>
+                </a>
+                <a href="./orders.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                  <span class="material-icons"><img src="../src/icons/326700_cart_shopping_icon.svg"></span>
+                  <span class="ml-3">Reservations</span>
+                </a>
+              </nav>
+            </aside>
         
           <!-- Main Content Area -->
           <div class="flex-1 flex flex-col">
             <!-- Header -->
-            <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
-              <h1 class="text-xl font-semibold text-gray-700">Dashboard</h1>
-              <div class="flex items-center space-x-4">
-                <img src="https://via.placeholder.com/40" alt="Profile Picture" class="w-10 h-10 rounded-full">
-                <span class="text-gray-700">User Name</span>
-              </div>
-            </header>
+               <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
+                 <h1 class="text-xl font-semibold text-gray-700">Dashboard</h1>
+                 <div class="flex items-center space-x-4">
+                   <img src="https://via.placeholder.com/40" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                   <span class="text-gray-700">User Name</span>
+                 </div>
+               </header>
         
             <!-- Main Section -->
-            <main class="p-6 space-y-6">
-              <h2 class="text-2xl font-bold text-gray-700">Properties</h2>
+            <main class="p-6 space-y-6" id="property-list">
+              <div class="w-full flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-gray-700">Properties</h2>
+                <div onclick="contactForm()" class="p-3 bg-indigo-600 text-white font-semibold cursor-pointer rounded-md hover:bg-indigo-700">Add Property</div>
+              </div>
               <div class="flex flex-row gap-3">
                 <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Lands</span>
                 <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">House</span>
@@ -93,6 +96,79 @@
                 </div>
               </div>
             </main>
+
+            <!-- Main Section for Property Form -->
+            <section class="p-6 space-y-6 hidden" id="add-property-form">
+              <h2 class="text-2xl font-bold text-gray-700">Add New Property</h2>
+
+              <!-- Property Form -->
+              <form class="space-y-4 bg-white p-6 rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <!-- Image Upload -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="property-image">Upload Property Image</label>
+                    <input type="file" id="property-image" class="w-full mt-1 p-2 border border-gray-300 rounded-md" accept="image/*">
+                  </div>
+          
+                  <!-- YouTube Video Link -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="video-link">YouTube Video Link</label>
+                    <input type="url" id="video-link" class="w-full mt-1 p-2 border border-gray-300 rounded-md" placeholder="Enter YouTube video link">
+                  </div>
+                  
+                  <!-- Property Name -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="property-name">Property Name</label>
+                    <input type="text" id="property-name" class="w-full mt-1 p-2 border border-gray-300 rounded-md" placeholder="Enter property name" required>
+                  </div>
+          
+                  <!-- Property Location -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="property-location">Property Location</label>
+                    <input type="text" id="property-location" class="w-full mt-1 p-2 border border-gray-300 rounded-md" placeholder="Enter property location" required>
+                  </div>
+          
+                  <!-- Price in Naira -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="price-naira">Price in Naira</label>
+                    <input type="number" id="price-naira" class="w-full mt-1 p-2 border border-gray-300 rounded-md" placeholder="Enter price in Naira" required>
+                  </div>
+          
+                  <!-- Size -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="property-size">Size (in sq. ft.)</label>
+                    <input type="number" id="property-size" class="w-full mt-1 p-2 border border-gray-300 rounded-md" placeholder="Enter size" required>
+                  </div>
+        
+                  <!-- Property Type -->
+                  <div>
+                    <label class="block text-gray-700 font-semibold" for="property-type">Property Type</label>
+                    <select id="property-type" class="w-full mt-1 p-2 border border-gray-300 rounded-md">
+                      <option value="">Select type</option>
+                      <option value="rent">Rent</option>
+                      <option value="house">House</option>
+                      <option value="land">Land</option>
+                    </select>
+                  </div>
+
+                  <!-- Availability Checkbox -->
+                  <div class="flex items-center">
+                    <input type="checkbox" id="available" class="h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                    <label for="available" class="ml-2 block text-gray-700">Still Available</label>
+                  </div>
+                </div>
+        
+                <!-- Property Details -->
+                <div>
+                  <label class="block text-gray-700 font-semibold" for="property-details">Features/Description</label>
+                  <textarea id="property-details" class="w-full mt-1 p-2 border border-gray-300 rounded-md" rows="4" placeholder="Enter property features or description" required></textarea>
+                </div>
+        
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700">Submit Property</button>
+              </form>
+            </section>
+
           </div>
         
     </div>
@@ -106,6 +182,11 @@
     } else {
         document.getElementById("dashboard").classList.add('hidden')
         document.getElementById("not-logged-in").classList.remove('hidden')
+    }
+
+    const contactForm = () => {
+      document.getElementById("add-property-form").classList.toggle('hidden')
+      document.getElementById("property-list").classList.toggle('hidden')
     }
 </script>
 </html>

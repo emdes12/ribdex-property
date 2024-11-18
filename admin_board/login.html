@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <!-- login page -->
+  <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md" id="login-page">
+    <h2 class="text-2xl font-bold text-center text-gray-700">Login</h2>
+    <form class="space-y-4">
+      <div>
+        <label for="email" class="text-sm text-gray-600">Email</label>
+        <input type="email" id="email" class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="password" class="text-sm text-gray-600">Password</label>
+        <input type="password" id="password" class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Enter your password">
+      </div>
+      <button type="submit" id="signInSubmit" class="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none">Login</button>
+    </form>
+    <p class="text-sm text-center text-gray-600">Don't have an account? <a onclick="switchPage()" class="cursor-pointer text-indigo-600 hover:underline">Sign Up</a></p>
+  </div>
+
+  <!-- signup page -->
+  <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md hidden" id="signup-page">
+    <h2 class="text-2xl font-bold text-center text-gray-700">Sign Up</h2>
+    <form class="space-y-4">
+      <div id="signUpMessage" class="bg-purple-300 px-3 py-5 m-[10px] text-base hidden"></div>
+      <div>
+        <label for="username" class="text-sm text-gray-600">Username</label>
+        <input type="text" id="rusername" class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Enter your username">
+      </div>
+      <div>
+        <label for="email" class="text-sm text-gray-600">Email</label>
+        <input type="email" id="remail" class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="password" class="text-sm text-gray-600">Password</label>
+        <input type="password" id="rpassword" class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Create a password">
+      </div>
+      <button type="button" id="signUpSubmit" class="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none">Sign Up</button>
+    </form>
+    <p class="text-sm text-center text-gray-600">Already have an account? <a onclick="switchPage()" class="cursor-pointer text-indigo-600 hover:underline">Login</a></p>
+  </div>
+</body>
+<script>
+    const switchPage = () => {
+        document.getElementById("login-page").classList.toggle('hidden')
+        document.getElementById("signup-page").classList.toggle('hidden')
+    }
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
+    authDomain: "real-ribdex-property.firebaseapp.com",
+    projectId: "real-ribdex-property",
+    storageBucket: "real-ribdex-property.firebasestorage.app",
+    messagingSenderId: "634531624880",
+    appId: "1:634531624880:web:872297c7bfa67dd7150875"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  function showMessage(message, divId){
+    var messageDIv = document.getElementById(divId);
+    messageDIv.classList.toggle('hidden');
+    messageDIv.innerHTML = message;
+    setTimeout(function(){
+      console.log('good');
+    }, 5000);
+  }
+
+  const signUp = document.getElementById("signUpSubmit")
+
+  signUp.addEventListener("click", (e)=>{
+    alert("clicked")
+    e.preventDefault();
+    const email = document.getElementById("remail").value;
+    const password = document.getElementById("rpassword").value;
+    const username = document.getElementById("rusername").value;
+
+    const auth = getAuth();
+    const db = getFirestore();
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential)=>{
+      const user = userCredential.user;
+
+      const userData = {
+        email: email,
+        username: username,
+      }
+
+      showMessage('Account Created Successfully', 'signUpMessage');
+
+      const docRef = doc(db, "user", user.uid);
+      setDoc(docRef, userData).then(()=>{
+        window.location.href="../admin_board/admin"
+      }).catch((error)=>{
+        console.error("error writing document", error)
+      })
+    })
+    .catch((error)=>{
+      const errorCode = error.code;
+      if(errorCode == 'auth/email-already-in-use'){
+        showMessage('Email Address Already Exists!!!', 'signUpMessage')
+      } else {
+        showMessage('Unable to create User', 'signUpMessage')
+
+      }
+    })
+  })
+
+const signIn = document.getElementById("signInSubmit")
+
+signIn.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = socument.getElementById("password").value;
+})
+</script>
+</html>
