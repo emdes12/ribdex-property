@@ -25,12 +25,13 @@ const db = getFirestore();
 onAuthStateChanged(auth, (user)=>{
     const loggedInUserId = localStorage.getItem('userID');
     if(loggedInUserId){
-        const docRef = doc(db, "users", loggedInUserId);
-        getDoc(docRef)
-        .then((docSnap)=>{
+        const docRef = doc(db, "user", loggedInUserId);
+        getDoc(docRef).then((docSnap)=>{
             if(docSnap.exists()){
                 const userData = docSnap.data();
-                document.getElementById(usernameDisp).innerText = user.username;
+                document.getElementById("usernameDisp").innerText = userData.username;
+                console.log(userData.username);
+                
             } else{
                 console.log("no document found matching document")
             }
@@ -50,5 +51,12 @@ signOutBtn.addEventListener('click', () => {
     confirm("You're about to be logged out?");
     
     localStorage.removeItem('userID');
-    window.location.href='./admin.html';
+    signOut(auth)
+    .then(()=>{
+        window.location.href='./admin.html';
+    })
+    .cathc((error)=>{
+        console.log("Error:", error);
+        
+    })
 })
