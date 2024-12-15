@@ -6,6 +6,8 @@
     <title>Properties Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="./gen.js" type="module" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"></script>
 </head>
 <body class="min-h-screen bg-gray-100">
     <div class="flex items-center justify-center w-full min-h-screen" id="not-logged-in">
@@ -50,19 +52,19 @@
                 <h2 class="text-2xl font-bold text-gray-700">Properties</h2>
                 <div onclick="contactForm()" class="p-3 bg-indigo-600 text-white font-semibold cursor-pointer rounded-md hover:bg-indigo-700">Add Property</div>
               </div>
-              <div class="flex flex-row gap-3">
-                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Lands</span>
+              <div class="flex flex-row gap-3" id="prop-types">
+                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Land</span>
                 <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">House</span>
-                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Rents</span>
+                <span class="text-black hover:text-indigo-600 cursor-pointer tx-sm font-semibold">Rent</span>
               </div>
               <!-- Property Cards -->
-              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="prop-cards">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                   <img src="https://via.placeholder.com/300x200" alt="Property Image" class="w-full h-40 object-cover">
                   <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Property Title</h3>
-                    <p class="mt-1 text-sm text-gray-600">Location: New York, NY</p>
+                    <h3 class="text-lg font-semibold text-gray-800 h-[56px]">Property Title</h3>
+                    <p class="mt-1 text-sm text-gray-600 h-[40px]">Location: New York, NY</p>
                     <div class="flex items-center justify-between mt-3">
                       <span class="text-indigo-600 font-bold">12 Requests</span>
                       <span class="text-green-600 font-bold">$2000/month</span>

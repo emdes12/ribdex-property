@@ -1,21 +1,16 @@
-// Import the necessary Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+// Import the Firebase modules (CDN-based approach)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
-  getFirestore,
-  doc,
-  setDoc,
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-import {
-  getStorage,
+  getDatabase,
   ref,
-  uploadBytes,
-  getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+  set,
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
   authDomain: "real-ribdex-property.firebaseapp.com",
+  databaseURL: "https://real-ribdex-property-default-rtdb.firebaseio.com",
   projectId: "real-ribdex-property",
   storageBucket: "real-ribdex-property.firebasestorage.app",
   messagingSenderId: "634531624880",
@@ -24,16 +19,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+const database = getDatabase(app);
 
 // Handle form submission
 const addPropForm = document.querySelector("#addcontactform");
 addPropForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  console.log("clicked");
+  event.preventDefault(); // Prevent default form submission
 
-  // Get form values
+  // Get form field values
   const propertyImage = document.getElementById("property-image").files[0];
   const videoLink = document.getElementById("video-link").value;
   const propertyName = document.getElementById("property-name").value;
@@ -41,10 +34,8 @@ addPropForm.addEventListener("submit", async (event) => {
   const priceNaira = document.getElementById("price-naira").value;
   const propertySize = document.getElementById("property-size").value;
   const propertyType = document.getElementById("property-type").value;
-  const isAvailable = document.getElementById("available").checked;
+  const available = document.getElementById("available").checked;
   const propertyDetails = document.getElementById("property-details").value;
-
-  let imageUrl = "";
 
   // Cloudinary details
   const cloudName = "dm2qygoyi";
@@ -71,35 +62,43 @@ addPropForm.addEventListener("submit", async (event) => {
     // Store the uploaded image URL
     const imageUrl = data.secure_url;
 
-    // Save property details to Firestore
-    const propertyData = {
-      image: imageUrl,
-      videoLink: videoLink,
-      name: propertyName,
-      location: propertyLocation,
-      price: Number(priceNaira),
-      size: Number(propertySize),
-      type: propertyType,
-      available: isAvailable,
-      details: propertyDetails,
-      formFilled: 0,
-      createdAt: new Date().toISOString(),
-    };
+    // Log the final data or send it to your database
+    console.log({
+      propertyName,
+      imageUrl,
+    });
 
-    const docRef = doc(
-      db,
-      "properties",
-      propertyType,
-      "items",
-      propertyName.replace(/\s+/g, "-").toLowerCase()
-    );
-    await setDoc(docRef, propertyData);
+    console.log("Property uploaded successfully!");
+    try {
+      // Generate a unique key for the property
+      const propertyKey = `${propertyType}/${propertyName}`;
 
-    alert("Property uploaded successfully!");
-    addPropForm.reset();
-    contactForm();
+      // Prepare the data object
+      const propertyData = {
+        propertyImage: imageUrl,
+        videoLink,
+        propertyName,
+        propertyLocation,
+        priceNaira,
+        propertySize,
+        propertyType,
+        available,
+        propertyDetails,
+        formFilled: 0,
+      };
+
+      // Upload data to Firebase Realtime Database
+      await set(ref(database, `properties/${propertyKey}`), propertyData);
+
+      addPropForm.reset();
+      contactForm();
+      alert("Property added successfully!");
+    } catch (error) {
+      console.error("Error uploading property: ", error);
+      alert("Failed to add property. Please try again.");
+    }
   } catch (error) {
-    console.error("Error uploading property:", error);
+    console.error("Error uploading file:", error);
     alert("Failed to upload property. Please try again.");
   }
 });
