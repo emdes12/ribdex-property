@@ -536,6 +536,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function dispNewProp(data){
     const formattedPrice = formatNumberWithCommas(data.priceNaira); // Format the price
+    const detailData = data.propertyDetails;
+    let descriptionWithBreaks = detailData.replace(/\n/g, '<br>') // change break line 
+    descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
+    descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
     document.querySelector(".main-article").innerHTML = `
     <div class="container-s container--narrow flow">
           <div class="prop-hero">
@@ -572,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
-          ${data.propertyDetails}
+          <p style="display: inline">${descriptionWithBreaks}</p>
         </div>`
   }
 
