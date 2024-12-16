@@ -537,6 +537,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function dispNewProp(data){
     const formattedPrice = formatNumberWithCommas(data.priceNaira); // Format the price
     const detailData = data.propertyDetails;
+    let propUnit;
+    if(data.propertyType === "land") {
+      propUnit = "sqm"
+    } else {
+      propUnit = "bedroom"
+    }
     let descriptionWithBreaks = detailData.replace(/\n/g, '<br>') // change break line 
     descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
     descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
@@ -554,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/${data.videoLink}"
+                src="${data.videoLink}"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -564,14 +570,14 @@ document.addEventListener('DOMContentLoaded', () => {
               </iframe>
             </div>
             <span class="property-location">
-              <img src="./src/icons/location (2).svg" />${data.propeertyLocation}
+              <img src="./src/icons/location (2).svg" />${data.propertyLocation}
             </span>
             <div class="property-info">
               <span class="property-location"
                 ><img src="./src/icons/price.svg" />₦${formattedPrice}</span
               >
               <span class="property-location"
-                ><img src="./src/icons/bed.svg" class="w-[30px] h-[30px]" />${data.propertySize}</span
+                ><img src="./src/icons/bed.svg" class="w-[30px] h-[30px]" />${data.propertySize}${propUnit}</span
               >
             </div>
           </div>
