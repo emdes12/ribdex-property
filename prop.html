@@ -118,73 +118,44 @@
         
       </article>
     </main>
-
-    <!-- contact form -->
-    <div
-      id="contact"
-      class="container mx-auto px-[10px] md:px-[105px] pt-[183px]"
+    
+    <!-- FORMS TO APPLY FOR THE PRPOPERTY -->
+    <form
+    id="search-property"
+    method="post"
+    action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
+    class="w-full flex gap-[15px] flex-col md:flex-row items-start justify-between"
+  >
+    <input
+      required
+      type="text"
+      name="location"
+      class="w-full md:w-[680px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+      placeholder="Enter your preferred Location"
+    />
+    <select
+      class="w-full md:w-[260px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+      name="property-type"
+      id="property-type"
     >
-      <h1
-        class="text-[#125505] text-center text-[30px] md:text-[54px] font-bold font-head uppercase leading-[48.60px]"
-      >
-        contact us
-      </h1>
-
-      <div
-        class="w-full flex pt-7 pb-[50px] gap-8 flex-col lg:flex-row justify-between items-center"
-      >
-        <div class="w-full md:max-w-[500px] h-[300px] md:h-[403px]">
-          <img
-            style="object-position: center; object-fit: cover"
-            class="h-full object-cover object-center w-full"
-            src="./src/images/image (3).webp"
-            alt="customer service"
-          />
-        </div>
-        <form
-          id="contact-form"
-          method="post"
-          action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
-          class="w-full md:w-[530px] flex gap-[15px] flex-col items-start"
-        >
-          <input
-            required
-            type="text"
-            name="full_name"
-            class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
-            placeholder="Name:"
-          />
-          <input
-            required
-            type="email"
-            name="email_address"
-            class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
-            placeholder="Email Address:"
-          />
-          <input
-            required
-            type="number"
-            name="phone_number"
-            class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
-            placeholder="Phone Number:"
-          />
-          <textarea
-            required
-            name="message"
-            id="message"
-            rows="4"
-            class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
-            placeholder="Message:"
-          ></textarea>
-          <button
-            type="submit"
-            class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-          >
-            submit
-          </button>
-        </form>
-      </div>
-    </div>
+      <option value="">Select property type</option>
+      <option value="rent">Rent</option>
+      <option value="house">House</option>
+      <option value="land">Land</option>
+    </select>
+    <button
+      type="submit"
+      class="py-4 hidden md:flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+    >
+      search
+    </button>
+    <button
+      type="submit"
+      class="w-full md:hidden py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+    >
+      search
+    </button>
+  </form>
 
     <!-- footer -->
     <div class="w-full bg-[#26921E] py-[32px]">
@@ -547,6 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
     descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
     descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
     document.querySelector(".main-article").innerHTML = `
+    <div class="mx-auto" style="width: 90%; padding: 30px; background: white; margin: auto 0;">
     <div class="container-s container--narrow flow">
           <div class="prop-hero">
             <h1 class="headline prop-title">${title}</h1>
@@ -569,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
               >
               </iframe>
             </div>
-            <span class="property-location">
+            <span class="property-location" style="padding-top: 20px">
               <img src="./src/icons/location (2).svg" />${data.propertyLocation}
             </span>
             <div class="property-info">
@@ -582,7 +554,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
-          <p style="display: inline">${descriptionWithBreaks}</p>
+          <p style="display: inline; "><button
+              type="submit"
+              class="py-4 hidden md:flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+              style="cursor: none;"
+            >
+              Property Description
+            </button> <br> ${descriptionWithBreaks}</p>
+        </div>
         </div>`
   }
 
