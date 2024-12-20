@@ -395,19 +395,25 @@
       console.log(objData);
       for (const prop in objData) {
         if (prop !== "land") {
-          console.log(prop)
+          // console.log(prop)
           for (const estate in objData[prop]) {
             const property = objData[prop][estate];
+            let isAvailable;
+            if (property.available){
+              isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: green;" class="absolute top-[10px] right-[10px] bg-green-900 px-[15px] py-[10px] text-[12px] text-white">Available</p>`
+            } else {
+              isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: red;" class="absolute top-[10px] right-[10px] bg-red-900 px-[15px] py-[10px] text-[12px] text-white">Not Available</p>`
+            }
             const formattedPrice = formatNumberWithCommas(property.priceNaira); // Format the price
             document.getElementById('residence-card').innerHTML += `<div
             class="rounded-[20px] w-[340px] overflow-x-hidden overflow-y-hidden"
             style="box-shadow: 0px 0px 38.9px -20px rgba(0, 0, 0, 0.25)"
           >
-            <img
+            <div class="relative w-full"><img
               src="${property.propertyImage}"
               class="w-full h-[280px]"
               alt=""
-            />
+            /> ${isAvailable}</div>
             <div class="p-[20px] w-full flex flex-col gap-[15px]">
               <h6
                 class="font-head text-[18px] text-[#26921E] uppercase font-bold"
@@ -447,16 +453,23 @@
         } else {
           for (const estate in objData[prop]) {
             const property = objData[prop][estate];
+            let isAvailable;
+            if (property.available){
+              isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: green;" class="absolute top-[10px] right-[10px] bg-green-900 px-[15px] py-[10px] text-[12px] text-white">Available</p>`
+            } else {
+              isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: red;" class="absolute top-[10px] right-[10px] bg-red-900 px-[15px] py-[10px] text-[12px] text-white">Not Available</p>`
+            }
             const formattedPrice = formatNumberWithCommas(property.priceNaira); // Format the price
             document.getElementById('land-card').innerHTML += `<div
             class="rounded-[20px] w-[340px] overflow-x-hidden overflow-y-hidden"
             style="box-shadow: 0px 0px 38.9px -20px rgba(0, 0, 0, 0.25)"
           >
-            <img
+            
+            <div class="relative w-full"><img
               src="${property.propertyImage}"
               class="w-full h-[280px]"
               alt=""
-            />
+            /> ${isAvailable}</div>
             <div class="p-[20px] w-full flex flex-col gap-[15px]">
               <h6
                 class="font-head text-[18px] text-[#26921E] uppercase font-bold"

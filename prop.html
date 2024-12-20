@@ -120,42 +120,58 @@
     </main>
     
     <!-- FORMS TO APPLY FOR THE PRPOPERTY -->
-    <form
-    id="search-property"
-    method="post"
-    action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
-    class="w-full flex gap-[15px] flex-col md:flex-row items-start justify-between"
-  >
-    <input
-      required
-      type="text"
-      name="location"
-      class="w-full md:w-[680px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-      placeholder="Enter your preferred Location"
-    />
-    <select
-      class="w-full md:w-[260px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-      name="property-type"
-      id="property-type"
-    >
-      <option value="">Select property type</option>
-      <option value="rent">Rent</option>
-      <option value="house">House</option>
-      <option value="land">Land</option>
-    </select>
-    <button
-      type="submit"
-      class="py-4 hidden md:flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-    >
-      search
-    </button>
-    <button
-      type="submit"
-      class="w-full md:hidden py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-    >
-      search
-    </button>
-  </form>
+     <div class="container mx-auto">
+       <div class="max-w-[500px] mx-auto px-5">
+         <form
+         id="search-property"
+         method="post"
+         action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
+         class="w-full flex gap-[15px] flex-col items-start justify-between"
+       >
+         <input
+           required
+           type="text"
+           name="full-name"
+           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+           placeholder="Enter your Full Name"
+         />
+         <input
+           required
+           type="text"
+           name="email"
+           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+           placeholder="Enter your Email"
+         />
+         <input
+           required
+           type="text"
+           name="phone-number"
+           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+           placeholder="Enter your Phone Number"
+         />
+         <input
+           id="prop-title-to-submit"
+           name="property-title"
+           class="hidden"
+         />
+         <select
+           class="w-full md:w-[260px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
+           name="form-type"
+           id="form-type"
+         >
+           <option value="">Select type Application</option>
+           <option value="reservation">Make a reservation/am interested</option>
+           <option value="visit">A visit to the property</option>
+         </select>
+         <button
+           type="submit"
+           class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+         >
+           Submit Form
+         </button>
+       </form>
+       </div>
+    </div>
 
     <!-- footer -->
     <div class="w-full bg-[#26921E] py-[32px]">
@@ -487,6 +503,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const type = urlParams.get('type');
 const title = urlParams.get('title');
+const propTitForm = document.getElementById('prop-title-to-submit')
 
 console.log("Type:", type);
 console.log("Title:", title);
@@ -514,11 +531,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       propUnit = "bedroom"
     }
+    propTitForm.value = title;
     let descriptionWithBreaks = detailData.replace(/\n/g, '<br>') // change break line 
     descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
     descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
     document.querySelector(".main-article").innerHTML = `
-    <div class="mx-auto" style="width: 90%; padding: 30px; background: white; margin: auto 0;">
+    <div style="width: 90%; padding: 30px; background: white; margin: auto;">
     <div class="container-s container--narrow flow">
           <div class="prop-hero">
             <h1 class="headline prop-title">${title}</h1>
@@ -554,9 +572,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
-          <p style="display: inline; "><button
+          <p style="display: inline; width: 90%; margin: auto;"><button
               type="submit"
-              class="py-4 hidden md:flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+              class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
               style="cursor: none;"
             >
               Property Description
