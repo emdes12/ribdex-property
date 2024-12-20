@@ -123,7 +123,7 @@
      <div class="container mx-auto">
        <div class="max-w-[500px] mx-auto px-5">
          <form
-         id="search-property"
+         id="property-form"
          method="post"
          action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
          class="w-full flex gap-[15px] flex-col items-start justify-between"
@@ -132,6 +132,7 @@
            required
            type="text"
            name="full-name"
+           id="full-name"
            class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
            placeholder="Enter your Full Name"
          />
@@ -139,6 +140,7 @@
            required
            type="text"
            name="email"
+           name="client-email"
            class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
            placeholder="Enter your Email"
          />
@@ -146,12 +148,14 @@
            required
            type="text"
            name="phone-number"
+           id="phone-number"
            class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
            placeholder="Enter your Phone Number"
          />
          <input
            id="prop-title-to-submit"
            name="property-title"
+           id="property-title"
            class="hidden"
          />
          <select
@@ -164,7 +168,7 @@
            <option value="visit">A visit to the property</option>
          </select>
          <button
-           type="submit"
+           type="button"
            class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
          >
            Submit Form
@@ -499,7 +503,6 @@
     }
   </style>
   <script>
-    console.log("heyeheyeheyeheyeheyeheyeheyeheyeheyehey")
 const urlParams = new URLSearchParams(window.location.search);
 const type = urlParams.get('type');
 const title = urlParams.get('title');
@@ -589,4 +592,62 @@ function formatNumberWithCommas(number) {
 }
 
   </script>
+  <script>
+    // Import the Firebase modules (CDN-based approach)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  set,
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
+  authDomain: "real-ribdex-property.firebaseapp.com",
+  databaseURL: "https://real-ribdex-property-default-rtdb.firebaseio.com",
+  projectId: "real-ribdex-property",
+  storageBucket: "real-ribdex-property.firebasestorage.app",
+  messagingSenderId: "634531624880",
+  appId: "1:634531624880:web:872297c7bfa67dd7150875",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// Handle form submission
+const addPropForm = document.querySelector("#property-form");
+addPropForm.addEventListener("submit", async (event) => {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get form field values
+  const clientName = document.getElementById("full-name").value;
+  const clientEmail = document.getElementById("client-email").value;
+  const clientPhone = document.getElementById("phone-number").value;
+  const propertyApplyiedFor = document.getElementById("property-title").value;
+  const applicationType = document.getElementById("form-type").value;
+
+    try {
+      // Generate a unique key for the property
+      const propertyKey = `${applicationType}/${propertyApplyiedFor}`;
+
+      // Prepare the data object
+      const propertyData = {
+        clientName,
+        clientEmail,
+        clientPhone,
+      };
+
+      // Upload data to Firebase Realtime Database
+      await set(ref(database, `form/Applied${propertyKey}`), propertyData);
+
+      addPropForm.reset();
+      alert("Form successfully submitted!");
+    } catch (error) {
+      console.error("Error uploading property: ", error);
+      alert("Failed to submit. Please try again.");
+    }
+});
+</script>
 </html>
