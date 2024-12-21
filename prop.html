@@ -123,7 +123,6 @@
      <div class="container mx-auto">
        <div class="max-w-[500px] mx-auto px-5">
          <form
-         id="property-form"
          class="w-full flex gap-[15px] flex-col items-start justify-between"
        >
          <input
@@ -138,7 +137,7 @@
            required
            type="text"
            name="email"
-           name="client-email"
+           id="client-email"
            class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
            placeholder="Enter your Email"
          />
@@ -151,7 +150,6 @@
            placeholder="Enter your Phone Number"
          />
          <input
-           id="prop-title-to-submit"
            name="property-title"
            id="property-title"
            class="hidden"
@@ -166,15 +164,82 @@
            <option value="visit">A visit to the property</option>
          </select>
          <button
-           typ="button"
+           type="button"
+           id="propfrm"
            class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
          >
            Submit Form
          </button>
        </form>
        </div>
-    </div>
 
+       
+       <!-- dont show contact -->
+       <div
+       id="contact"
+       class="container mx-auto px-[10px] md:px-[105px] pt-[183px]"
+     >
+       <h1
+         class="text-[#125505] text-center text-[30px] md:text-[54px] font-bold font-head uppercase leading-[48.60px]"
+       >
+         contact us
+       </h1>
+   
+       <div
+         class="w-full flex pt-7 pb-[50px] gap-8 flex-col lg:flex-row justify-between items-center"
+       >
+         <div class="w-full md:max-w-[500px] h-[300px] md:h-[403px]">
+           <img
+             style="object-position: center; object-fit: cover"
+             class="h-full object-cover object-center w-full"
+             src="./src/images/image (3).webp"
+             alt="customer service"
+           />
+         </div>
+         <form
+           id="contact-form"
+           method="post"
+           action="https://script.google.com/macros/s/AKfycbwnH2Hupvrb8TmZruzbjxMHW5uxx-VijpLL4hpipOSsiOGxy_vmr35W8vzngPC5j-_N/exec"
+           class="w-full md:w-[530px] flex gap-[15px] flex-col items-start"
+         >
+           <input
+             required
+             type="text"
+             name="full_name"
+             class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
+             placeholder="Name:"
+           />
+           <input
+             required
+             type="email"
+             name="email_address"
+             class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
+             placeholder="Email Address:"
+           />
+           <input
+             required
+             type="number"
+             name="phone_number"
+             class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
+             placeholder="Phone Number:"
+           />
+           <textarea
+             required
+             name="message"
+             id="message"
+             rows="4"
+             class="w-full bg-transparent px-[20px] py-[10px] border-l-2 border-b-2 border-[#125505] placeholder-green-700 text-xl font-medium font-head"
+             placeholder="Message:"
+           ></textarea>
+           <button
+             type="submit"
+             class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
+           >
+             submit
+           </button>
+         </form>
+       </div>
+     </div>
     <!-- footer -->
     <div class="w-full bg-[#26921E] py-[32px]">
       <div
@@ -590,42 +655,50 @@ function formatNumberWithCommas(number) {
 }
 
   </script>
-  <script>
+  <script type="module">
     // Import the Firebase modules (CDN-based approach)
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  set,
-} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
-  authDomain: "real-ribdex-property.firebaseapp.com",
-  databaseURL: "https://real-ribdex-property-default-rtdb.firebaseio.com",
-  projectId: "real-ribdex-property",
-  storageBucket: "real-ribdex-property.firebasestorage.app",
-  messagingSenderId: "634531624880",
-  appId: "1:634531624880:web:872297c7bfa67dd7150875",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-// Handle form submission
-const addPropForm = document.querySelector("#property-form");
-addPropForm.addEventListener("submit", async (event) => {
-  event.preventDefault(); // Prevent default form submission
-
-  // Get form field values
-  const clientName = document.getElementById("full-name").value;
-  const clientEmail = document.getElementById("client-email").value;
-  const clientPhone = document.getElementById("phone-number").value;
-  const propertyApplyiedFor = document.getElementById("property-title").value;
-  const applicationType = document.getElementById("form-type").value;
-
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+    } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
+      authDomain: "real-ribdex-property.firebaseapp.com",
+      databaseURL: "https://real-ribdex-property-default-rtdb.firebaseio.com",
+      projectId: "real-ribdex-property",
+      storageBucket: "real-ribdex-property.firebasestorage.app",
+      messagingSenderId: "634531624880",
+      appId: "1:634531624880:web:872297c7bfa67dd7150875",
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    
+    // Handle form submission
+    const applyFormSubmitBtn = document.getElementById("propfrm")
+    applyFormSubmitBtn.addEventListener("click", async (e)=>{
+      e.preventDefault()
+      console.log("clicked form")
+    
+      // Get form field values
+      const clientName = document.getElementById("full-name").value;
+      const clientEmail = document.getElementById("client-email").value;
+      const clientPhone = document.getElementById("phone-number").value;
+      const propertyApplyiedFor = title;
+      const applicationType = document.getElementById("form-type").value;
+      console.log("value got:", {
+            clientName,
+            clientEmail,
+            clientPhone,
+            propertyApplyiedFor,
+            applicationType,
+          })
+    
     try {
       // Generate a unique key for the property
       const propertyKey = `${applicationType}/${propertyApplyiedFor}`;
@@ -635,10 +708,14 @@ addPropForm.addEventListener("submit", async (event) => {
         clientName,
         clientEmail,
         clientPhone,
+            propertyApplyiedFor,
+            applicationType,
       };
+      console.log("uploading")
 
       // Upload data to Firebase Realtime Database
       await set(ref(database, `form/Applied${propertyKey}`), propertyData);
+      console.log("uploaded")
 
       addPropForm.reset();
       alert("Form successfully submitted!");
@@ -646,6 +723,6 @@ addPropForm.addEventListener("submit", async (event) => {
       console.error("Error uploading property: ", error);
       alert("Failed to submit. Please try again.");
     }
-});
+    })
 </script>
 </html>
