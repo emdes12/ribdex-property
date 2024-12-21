@@ -123,8 +123,10 @@
      <div class="container mx-auto">
        <div class="max-w-[500px] mx-auto px-5">
          <form
+         id="appForm"
          class="w-full flex gap-[15px] flex-col items-start justify-between"
        >
+         <div class="w-full text-center font-head font-bold text-[24px]">Make your Reservation OR Visitation Request</div>
          <input
            required
            type="text"
@@ -569,7 +571,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const type = urlParams.get('type');
 const title = urlParams.get('title');
-const propTitForm = document.getElementById('prop-title-to-submit')
+const propTitForm = document.getElementById('property-title')
 
 console.log("Type:", type);
 console.log("Title:", title);
@@ -681,6 +683,7 @@ function formatNumberWithCommas(number) {
     
     // Handle form submission
     const applyFormSubmitBtn = document.getElementById("propfrm")
+    const appForm = document.getElementById("appForm")
     applyFormSubmitBtn.addEventListener("click", async (e)=>{
       e.preventDefault()
       console.log("clicked form")
@@ -701,7 +704,7 @@ function formatNumberWithCommas(number) {
     
     try {
       // Generate a unique key for the property
-      const propertyKey = `${applicationType}/${propertyApplyiedFor}`;
+      const propertyKey = `${applicationType}/${propertyApplyiedFor}/${clientName}`;
 
       // Prepare the data object
       const propertyData = {
@@ -714,10 +717,10 @@ function formatNumberWithCommas(number) {
       console.log("uploading")
 
       // Upload data to Firebase Realtime Database
-      await set(ref(database, `form/Applied${propertyKey}`), propertyData);
+      await set(ref(database, `form/${propertyKey}`), propertyData);
       console.log("uploaded")
 
-      addPropForm.reset();
+      appForm.reset();
       alert("Form successfully submitted!");
     } catch (error) {
       console.error("Error uploading property: ", error);

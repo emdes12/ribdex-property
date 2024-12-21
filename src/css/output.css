@@ -794,16 +794,12 @@ video {
   width: 100%;
 }
 
-.min-w-\[500px\]{
-  min-width: 500px;
+.max-w-\[500px\]{
+  max-width: 500px;
 }
 
 .max-w-\[600px\]{
   max-width: 600px;
-}
-
-.max-w-\[500px\]{
-  max-width: 500px;
 }
 
 .flex-shrink{
@@ -1171,6 +1167,10 @@ video {
   font-size: 22px;
 }
 
+.text-\[24px\]{
+  font-size: 24px;
+}
+
 .text-\[25px\]{
   font-size: 25px;
 }
@@ -1196,6 +1196,10 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[28px\]{
+  font-size: 28px;
 }
 
 .font-bold{
