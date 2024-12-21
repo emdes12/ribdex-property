@@ -134,63 +134,59 @@ const dispProps = (objData) => {
   console.log("get ready");
   console.log(objData);
   for (const prop in objData) {
-    console.log(objData[prop]);
+    // console.log(objData[prop]);
+
+    // create element to display
+    const masterCont = document.createElement("div");
+      masterCont.classList.add("bg-white");
+      masterCont.classList.add("rounded-lg");
+      masterCont.classList.add("shadow-lg");
+      masterCont.classList.add("p-4");
+      propsCardContainer.appendChild(masterCont);
+      
+      const h3 = document.createElement("h3");
+      h3.classList.add("text-xl");
+      h3.classList.add("font-semibold");
+      h3.classList.add("text-grey-800");
+      h3.textContent = `${prop} - Visit Requests`
+      masterCont.appendChild(h3);
+      
+      const ul = document.createElement("ul");
+      ul.classList.add("mt-4");
+      ul.classList.add("space-y-3");
+      masterCont.appendChild(ul);
+      
     for (const estate in objData[prop]) {
       const property = objData[prop][estate];
+      // console.log(property)
 
-      const card = document.createElement("div");
-      card.classList.add("bg-white");
-      card.classList.add("rounded-lg");
-      card.classList.add("shadow-lg");
-      card.classList.add("overflow-hidden");
-      propsCardContainer.appendChild(card);
+      const li = document.createElement("li")
+      li.classList.add("flex")
+      li.classList.add("items-center")
+      li.classList.add("justify-between")
+      li.classList.add("p-3")
+      li.classList.add("bg-gray-100")
+      li.classList.add("rounded-lg")
+      ul.appendChild(li)
 
-      const propImg = document.createElement("img");
-      propImg.classList.add("w-full");
-      propImg.classList.add("h-40");
-      propImg.classList.add("object-cover");
-      propImg.src = property.propertyImage;
-      card.appendChild(propImg);
+      const span1 = document.createElement("span")
+      span1.classList.add("font-medium")
+      span1.classList.add("text-gray-800")
+      span1.textContent = property.clientName
+      li.appendChild(span1)
 
-      const cardP = document.createElement("div");
-      cardP.classList.add("p-4");
-      card.appendChild(cardP);
+      const span2 = document.createElement("span")
+      span2.classList.add("text-sm")
+      span2.classList.add("text-gray-800")
+      span2.textContent = property.clientEmail
+      li.appendChild(span2)
 
-      const propertyName = document.createElement("h3");
-      propertyName.classList.add("text-lg");
-      propertyName.classList.add("font-semibold");
-      propertyName.classList.add("text-gray-800");
-      propertyName.classList.add("h-[56px]");
-      propertyName.textContent = estate;
-      cardP.appendChild(propertyName);
+      const span3 = document.createElement("span")
+      span3.classList.add("text-sm")
+      span3.classList.add("text-gray-800")
+      span3.textContent = property.clientPhone
+      li.appendChild(span3)
 
-      const propertyLocation = document.createElement("p");
-      propertyLocation.classList.add("mt-1");
-      propertyLocation.classList.add("text-sm");
-      propertyLocation.classList.add("text-gray-600");
-      propertyLocation.classList.add("h-[40px]");
-      propertyLocation.textContent = property.propertyLocation;
-      cardP.appendChild(propertyLocation);
-
-      const propOrders = document.createElement("p");
-      propOrders.classList.add("flex");
-      propOrders.classList.add("items-center");
-      propOrders.classList.add("justify-between");
-      propOrders.classList.add("mt-3");
-      cardP.appendChild(propOrders);
-
-      const propertyPrice = document.createElement("span");
-      propertyPrice.classList.add("text-indigo-600");
-      propertyPrice.classList.add("font-bold");
-      const formattedPrice = formatNumberWithCommas(property.priceNaira); // Format the price
-      propertyPrice.textContent = "₦" + formattedPrice;
-      propOrders.appendChild(propertyPrice);
-
-      const propertyFilled = document.createElement("span");
-      propertyFilled.classList.add("text-green-600");
-      propertyFilled.classList.add("font-bold");
-      propertyFilled.textContent = property.formFilled + " fill submitted";
-      propOrders.appendChild(propertyFilled);
     }
     console.log("done");
   }
@@ -206,8 +202,8 @@ function getpropIndv() {
       if (snapshot.exists()) {
         let propDatas = snapshot.val();
         console.log(propDatas);
-        propData = propDatas;
-        console,log(propData);
+        propData = propDatas["visit"];
+        dispProps(propData);
       } else {
         console.log("No data available");
       }
@@ -219,22 +215,7 @@ function getpropIndv() {
 getpropIndv();
 
 
-const typeHead = document.querySelector("#prop-types").children;
-if (typeHead) {
-  // Check if element exists
-  Array.from(typeHead).forEach((typeEl) => {
-    typeEl.addEventListener("click", () => {
-      const typeName = typeEl.innerText;
-      const typeProp = propData[typeName.toLowerCase()];
-      const typeObj = {type: typeProp};
-      dispProps(typeObj)
-      
-      // console.log({like: propData[typeName]})
-    });
-  });
-} else {
-  console.error("#prop-types element not found");
-}
+
 
 // format price to display with ',' - comma
 function formatNumberWithCommas(number) {

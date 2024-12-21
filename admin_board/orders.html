@@ -45,7 +45,7 @@
         <h2 class="text-2xl font-bold text-gray-700">Reservation List</h2>
   
         <!-- Property Reservation Lists -->
-        <div class="space-y-8">
+        <div class="space-y-8" id="reservers">
           <!-- Property 1 Reservation List -->
           <div class="bg-white p-4 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold text-gray-800">Property Title 1 - Reservations</h3>
@@ -91,4 +91,140 @@
       </main>
   </div>
 </body>
+<script type="module">
+  // Import Firebase and Firestore functions
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWQ552it5NQwc7LCqlZ9LS2TPfYRv5S9w",
+  authDomain: "real-ribdex-property.firebaseapp.com",
+  projectId: "real-ribdex-property",
+  storageBucket: "real-ribdex-property.firebasestorage.app",
+  messagingSenderId: "634531624880",
+  appId: "1:634531624880:web:872297c7bfa67dd7150875",
+  databaseURL: "https://real-ribdex-property-default-rtdb.firebaseio.com",
+};
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+let propData = "";
+
+import {
+  getDatabase,
+  ref as databaseRef,
+  set,
+  get,
+  child,
+  update,
+  remove,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+const propsCardContainer = document.querySelector("#reservers");
+
+// display proerty per object parsed
+const dispProps = (objData) => {
+  propsCardContainer.innerHTML = "";
+  console.log("get ready");
+  console.log(objData);
+  for (const prop in objData) {
+    // console.log(objData[prop]);
+
+    // create element to display
+    const masterCont = document.createElement("div");
+      masterCont.classList.add("bg-white");
+      masterCont.classList.add("rounded-lg");
+      masterCont.classList.add("shadow-lg");
+      masterCont.classList.add("p-4");
+      propsCardContainer.appendChild(masterCont);
+      
+      const h3 = document.createElement("h3");
+      h3.classList.add("text-xl");
+      h3.classList.add("font-semibold");
+      h3.classList.add("text-grey-800");
+      h3.textContent = `${prop} - Visit Requests`
+      masterCont.appendChild(h3);
+      
+      const ul = document.createElement("ul");
+      ul.classList.add("mt-4");
+      ul.classList.add("space-y-3");
+      masterCont.appendChild(ul);
+      
+    for (const estate in objData[prop]) {
+      const property = objData[prop][estate];
+      // console.log(property)
+
+      const li = document.createElement("li")
+      li.classList.add("flex")
+      li.classList.add("items-center")
+      li.classList.add("justify-between")
+      li.classList.add("p-3")
+      li.classList.add("bg-gray-100")
+      li.classList.add("rounded-lg")
+      ul.appendChild(li)
+
+      const span1 = document.createElement("span")
+      span1.classList.add("font-medium")
+      span1.classList.add("text-gray-800")
+      span1.textContent = property.clientName
+      li.appendChild(span1)
+
+      const span2 = document.createElement("span")
+      span2.classList.add("text-sm")
+      span2.classList.add("text-gray-800")
+      span2.textContent = property.clientEmail
+      li.appendChild(span2)
+
+      const span3 = document.createElement("span")
+      span3.classList.add("text-sm")
+      span3.classList.add("text-gray-800")
+      span3.textContent = property.clientPhone
+      li.appendChild(span3)
+
+    }
+    console.log("done");
+  }
+};
+
+function getpropIndv() {
+  propsCardContainer.innerHTML = "";
+  const database = getDatabase();
+  const dataRef = databaseRef(database, "form/");
+
+  get(dataRef)
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        let propDatas = snapshot.val();
+        console.log(propDatas);
+        propData = propDatas["reservation"];
+        dispProps(propData);
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+getpropIndv();
+
+
+
+
+// format price to display with ',' - comma
+function formatNumberWithCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+</script>
 </html>
