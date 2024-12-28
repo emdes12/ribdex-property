@@ -596,10 +596,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let descriptionWithBreaks = detailData.replace(/\n/g, '<br>') // change break line 
     descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
     descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
-    document.querySelector("meta[name='description']").setAttribute("content", descriptionWithBreaks);
-    document.querySelector("meta[property='og:title']").setAttribute("content", title);
-    document.querySelector("meta[property='og:description']").setAttribute("content", descriptionWithBreaks);
-    document.querySelector("meta[property='og:image']").setAttribute("content", data.propertyImage);
     document.querySelector(".main-article").innerHTML = `
     <div style="width: 90%; padding: 30px; background: white; margin: auto;">
     <div class="container-s container--narrow flow">
