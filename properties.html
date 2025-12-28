@@ -9,212 +9,188 @@
     />
     <meta
       property="og:description"
-      content="Ribdex Global is an educational travel consult that help to process seamless international educational opportunities across different countries. We help with providing a stress free educational support and educational professional support ranging across different tertiary institution and vocational institution."
+      content="Browse our complete collection of residential and land properties. Find your perfect investment opportunity with Ribdex Global."
     />
-    <title>Ribdex Global Real Estate Services</title>
+    <title>All Properties | Ribdex Global Real Estate</title>
     <link
       rel="shortcut icon"
       href="./src/icons/RIBDEX.svg"
       type="image/x-icon"
     />
     <link href="/src/css/output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./src/js/script.js" defer></script>
+    <script src="./src/js/animations.js" defer></script>
   </head>
-  <body
-    class="max-w-screen-xlh-[144440px] bg-green-50 relative overflow-x-hidden"
+  <body class="bg-gradient-to-br from-green-50 via-white to-orange-50 relative overflow-x-hidden"
   >
     <!-- Header/nav section -->
-    <header class="z-[19999999] bg-white py-[19px] fixed top-0 right-0 left-0">
-      <!-- logo -->
+    <header class="z-[9999] bg-white/95 backdrop-blur-md py-4 md:py-5 fixed top-0 right-0 left-0 shadow-soft transition-all duration-300">
       <div class="container px-5 flex mx-auto justify-between items-center">
-        <a href="./index.html">
-          <div class="flex justify-start items-center gap-2.5">
-            <img
-              class="w-10 md:w-20 relative"
-              src="/src/icons/RIBDEX.svg"
-              alt="logo"
-            />
+        <a href="./index.html" class="transform hover:scale-105 transition-transform duration-300">
+          <div class="flex justify-start items-center gap-3">
+            <img class="w-12 md:w-20 relative animate-pulse-slow" src="/src/icons/RIBDEX.svg" alt="Ribdex Global Logo" />
+            <span class="hidden lg:block text-primary-700 font-head font-bold text-xl">RIBDEX</span>
           </div>
         </a>
 
         <!-- desktop nav menu -->
         <nav>
-          <div class="hidden md:flex justify-start items-center gap-[17px]">
-            <div class="justify-start items-end gap-[10px] flex">
-              <a
-                href="./index.html#"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                home
-              </a>
-              <a
-                href="#residence"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                residence
-              </a>
-              <a
-                href="#land"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                land
-              </a>
-              <a
-                href="./index.html#contact"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                contact
-              </a>
-            </div>
+          <div class="hidden md:flex justify-start items-center gap-8">
+            <a href="./index.html#" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              home
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#residence" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              residence
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#land" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              land
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="./index.html#contact" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              contact
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
           </div>
 
           <!-- hamburger menu -->
-          <div id="hamburger-btn" class="md:hidden cursor-pointer">
-            <img src="./src/icons/Frame 38menu.svg" alt="menu-icon" />
-          </div>
+          <button id="hamburger-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+            <i data-lucide="menu" class="w-6 h-6 text-primary-700"></i>
+          </button>
         </nav>
       </div>
 
-      <!-- mobile -->
-      <div
-        id="mobile-menu"
-        class="absolute bg-white bg-opacity-70 top-full left-0 right-0 h-0 overflow-x-hidden flex flex-col justify-start items-start transition-all ease-in-out duration-[10ms]"
-        style="backdrop-filter: blur(10px)"
-      >
-        <div class="justify-start items-start flex flex-col">
-          <a
-            href="./index.html#"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            home
-          </a>
-          <a
-            href="#residence"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            residence
-          </a>
-          <a
-            href="#land"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            land
-          </a>
-          <a
-            href="./index.html#contact"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            contact
-          </a>
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="absolute glass-effect top-full left-0 right-0 h-0 overflow-hidden flex flex-col justify-start items-start transition-all duration-300 shadow-lg">
+        <div class="w-full flex flex-col bg-white/95 backdrop-blur-md">
+          <a href="./index.html#" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">home</a>
+          <a href="#residence" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">residence</a>
+          <a href="#land" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">land</a>
+          <a href="./index.html#contact" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 transition-colors duration-200">contact</a>
         </div>
       </div>
     </header>
 
     <!-- hero section -->
-    <div
-      class="w-full z-[8] overflow-x-hidden pt-[180px] pb-[20px] md:pt-[240px] md:pb-[50px] bg-cover bg-center"
-      style="
-        background-image: url('./src/images/house1.jpg');
-        background-position: center;
-      "
-    >
-      <div
-        class="container mx-auto z-[10] pt-[10px] pb-[10px] md:pb-0 px-[30px] md:px-[50px] flex flex-col justify-start items-center gap-[10px] md:gap-[30px] inline-flex"
-      >
-        <div
-          class="self-stretch text-center text-white text-[25px] md:text-[54px] font-bold font-head uppercase leading-[28px] md:leading-[48.60px]"
-        >
-          Your One-Stop Real Estate Solution
-        </div>
-        <div
-          class="self-stretch text-center text-white text-[13px] md:text-base font-normal font-body leading-tight"
-        >
-          Discover a wide range of properties, from residential to commercial, and expert services to match.
+    <div class="relative overflow-hidden">
+      <div class="relative w-full pt-32 pb-20 md:pt-40 md:pb-24 bg-cover bg-center" style="background-image: url('./src/images/house1.jpg'); background-position: center; background-attachment: fixed;" data-parallax="0.3">
+        <div class="container mx-auto z-10 relative px-6 md:px-12 text-center space-y-6">
+          <h1 class="text-white text-4xl md:text-6xl font-bold font-head uppercase leading-tight animate-fade-in-down">
+            Browse All Properties
+          </h1>
+          <p class="text-white/90 text-lg md:text-xl font-body max-w-3xl mx-auto animate-fade-in-up">
+            Discover a wide range of properties, from residential to commercial, and expert services to match your needs.
+          </p>
+          
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap justify-center gap-4 pt-8 animate-fade-in-up">
+            <button onclick="filterProperties('all')" class="filter-btn active px-6 py-3 bg-white text-primary-700 font-bold font-head uppercase rounded-lg hover:bg-accent-600 hover:text-white transition-all duration-300 flex items-center gap-2">
+              <i data-lucide="layout-grid" class="w-5 h-5"></i>
+              <span>All Properties</span>
+            </button>
+            <button onclick="filterProperties('residence')" class="filter-btn px-6 py-3 bg-white/90 text-primary-700 font-bold font-head uppercase rounded-lg hover:bg-accent-600 hover:text-white transition-all duration-300 flex items-center gap-2">
+              <i data-lucide="home" class="w-5 h-5"></i>
+              <span>Residence</span>
+            </button>
+            <button onclick="filterProperties('land')" class="filter-btn px-6 py-3 bg-white/90 text-primary-700 font-bold font-head uppercase rounded-lg hover:bg-accent-600 hover:text-white transition-all duration-300 flex items-center gap-2">
+              <i data-lucide="map" class="w-5 h-5"></i>
+              <span>Land</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
     
     <!-- property listing -->
-    <div class="bg-white py-[50px]">
-      <!-- residence/house listing -->
-      <div class="container mx-auto flex flex-col gap-[30px]" id="residence">
-        <div class="justify-center items-center flex">
-          <div class="text-black text-xl md:text-3xl font-bold font-head uppercase leading-[27px]">Residence Listing</div>
+    <section class="bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
+      <div class="container mx-auto px-6">
+        <!-- Residence Section -->
+        <div class="mb-20" id="residence">
+          <div class="text-center mb-12 animate-on-scroll">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full font-semibold text-sm uppercase mb-4">
+              <i data-lucide="home" class="w-4 h-4"></i>
+              <span>Residential Properties</span>
+            </div>
+            <h2 class="text-primary-800 text-3xl md:text-5xl font-bold font-head uppercase">Residence Listing</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="residence-card">
+            <!-- Properties will be dynamically inserted here -->
+          </div>
         </div>
+
+        <!-- Land Section -->
+        <div id="land">
+          <div class="text-center mb-12 animate-on-scroll">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent-100 text-accent-700 rounded-full font-semibold text-sm uppercase mb-4">
+              <i data-lucide="map" class="w-4 h-4"></i>
+              <span>Land Properties</span>
+            </div>
+            <h2 class="text-primary-800 text-3xl md:text-5xl font-bold font-head uppercase">Land Listing</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="land-card">
+            <!-- Properties will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white">
+      <div class="container mx-auto px-6 py-12">
+        <div class="border-t border-white/10 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/60 text-sm md:text-base font-body">
+              © <span class="copyright-year">2024</span> Ribdex Properties. All rights reserved.
+            </p>
+            <div class="flex items-center gap-4">
+              <a href="/facebook" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="/twitter" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="/instagram" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a href="http://linkedin.com/ribdex" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
       
-        <div class="flex flex-wrap gap-[30px] justify-between" id="residence-card">
-        </div>
-
+      function filterProperties(type) {
+        const residenceSection = document.getElementById('residence');
+        const landSection = document.getElementById('land');
+        const filterBtns = document.querySelectorAll('.filter-btn');
         
-        <div class="container mx-auto flex flex-col pt-[50px] gap-[30px]" id="land">
-          <div class="justify-between items-start flex">
-            <div class="text-black text-xl md:text-3xl font-bold font-head uppercase leading-[27px]">Land Listing</div>
-          </div>
+        filterBtns.forEach(btn => btn.classList.remove('active', 'bg-accent-600', 'text-white'));
+        event.target.closest('.filter-btn').classList.add('active', 'bg-accent-600', 'text-white');
         
-          <div class="flex flex-wrap gap-[30px] justify-between" id="land-card">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- copyright -->
-    <div class="w-full bg-[#125505] py-[20px]">
-      <div
-        class="container mx-auto px-[10px] md:px-[105px] flex justify-between items-center"
-      >
-        <span
-          class="text-white text-base md:text-xl font-light font-head uppercase"
-          >© 
-          <p class="copyright-year inline">2023</p> Ribdex Properties. Powered by Ribdex Properties</span>
-        <div class="flex items-center gap-[10px]">
-          <a
-            href="/facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./src/icons/Group 30facbook.svg"
-              alt="facebook"
-              class="w-[30px]"
-            />
-          </a>
-          <a
-            href="/twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./src/icons/Group 31Xtwitter.svg"
-              alt="X"
-              class="w-[30px]"
-            />
-          </a>
-          <a
-            href="/instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./src/icons/Group 32instagram.svg"
-              alt="instagram"
-              class="w-[30px]"
-            />
-          </a>
-          <a
-            href="http://linkedin.com/ribdex"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./src/icons/Group 33linkedin.svg"
-              alt="linkedin"
-              class="w-[30px]"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
+        if (type === 'all') {
+          residenceSection.classList.remove('hidden');
+          landSection.classList.remove('hidden');
+        } else if (type === 'residence') {
+          residenceSection.classList.remove('hidden');
+          landSection.classList.add('hidden');
+          residenceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (type === 'land') {
+          residenceSection.classList.add('hidden');
+          landSection.classList.remove('hidden');
+          landSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    </script>
   </body><script type="module">
     // Import the functions you need from the SDKs you need
     // Initialize Firebase
@@ -263,51 +239,48 @@
             } else {
               isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: red;" class="absolute top-[10px] right-[10px] bg-red-900 px-[15px] py-[10px] text-[12px] text-white">Not Available</p>`
             }
-            const formattedPrice = formatNumberWithCommas(property.priceNaira); // Format the price
-            document.getElementById('residence-card').innerHTML += `<div
-            class="rounded-[20px] w-[340px] overflow-x-hidden overflow-y-hidden"
-            style="box-shadow: 0px 0px 38.9px -20px rgba(0, 0, 0, 0.25)"
-          >
-            <div class="relative w-full"><img
-              src="${property.propertyImage}"
-              class="w-full h-[280px]"
-              alt=""
-            /> ${isAvailable}</div>
-            <div class="p-[20px] w-full flex flex-col gap-[15px]">
-              <h6
-                class="font-head text-[18px] text-[#26921E] uppercase font-bold"
-              >
-                ${estate}
-              </h6>
-              <span class="flex flex-row gap-[10px] text-[14px]"
-                ><img src="./src/icons/location (2).svg" />
-                <p>${property.propertyLocation}</p></span
-              >
-              <div class="flex justify-between w-full">
-                <span
-                  class="flex flex-row text-[14px] justify-center items-center"
-                  ><img src="./src/icons/price.svg" />
-                  <p>₦${formattedPrice}</p></span
-                >
-                <span
-                  class="flex flex-row text-[14px] justify-center items-center"
-                  ><img src="./src/icons/bed.svg" class="w-[30px] h-[30px]" />
-                  <p>${property.propertySize} bedroom</p></span
-                >
+            const formattedPrice = formatNumberWithCommas(property.priceNaira);
+            document.getElementById('residence-card').innerHTML += `<div class="card property-card group overflow-hidden">
+              <div class="relative overflow-hidden">
+                <img
+                  src="${property.propertyImage}"
+                  class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  alt="${estate}"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                ${isAvailable}
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2">
+                  <i data-lucide="home" class="w-4 h-4 text-primary-600"></i>
+                  <span class="text-sm font-semibold text-primary-600">Residence</span>
+                </div>
               </div>
-              <a
-                href="./prop.html?type=${property.propertyType}&title=${estate}"
-                class="w-full flex justify-center items-center"
-              >
-                <button
-                  type="submit"
-                  class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-                >
-                  explore now
-                </button>
-              </a>
-            </div>
-          </div>`
+              <div class="p-6 space-y-4">
+                <h3 class="font-head text-xl text-primary-700 uppercase font-bold group-hover:text-accent-600 transition-colors duration-300">
+                  ${estate}
+                </h3>
+                <div class="flex items-center gap-2 text-gray-600">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-accent-600"></i>
+                  <span class="text-sm">${property.propertyLocation}</span>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="tag" class="w-5 h-5 text-primary-600"></i>
+                    <span class="font-bold text-lg text-primary-800">₦${formattedPrice}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <i data-lucide="bed-double" class="w-5 h-5 text-accent-600"></i>
+                    <span class="text-sm font-medium">${property.propertySize} bed</span>
+                  </div>
+                </div>
+                <a href="./prop.html?type=${property.propertyType}&title=${estate}" class="block mt-4">
+                  <button class="btn-primary w-full justify-center group-hover:scale-105">
+                    <span>View Details</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </a>
+              </div>
+            </div>`
+            setTimeout(() => lucide.createIcons(), 100);
           }
         } else {
           for (const estate in objData[prop]) {
@@ -318,52 +291,48 @@
             } else {
               isAvailable = `<p style="top: 10px; right: 10px; padding: 10px 15px; font-weight: 800; background: red;" class="absolute top-[10px] right-[10px] bg-red-900 px-[15px] py-[10px] text-[12px] text-white">Not Available</p>`
             }
-            const formattedPrice = formatNumberWithCommas(property.priceNaira); // Format the price
-            document.getElementById('land-card').innerHTML += `<div
-            class="rounded-[20px] w-[340px] overflow-x-hidden overflow-y-hidden"
-            style="box-shadow: 0px 0px 38.9px -20px rgba(0, 0, 0, 0.25)"
-          >
-            
-            <div class="relative w-full"><img
-              src="${property.propertyImage}"
-              class="w-full h-[280px]"
-              alt=""
-            /> ${isAvailable}</div>
-            <div class="p-[20px] w-full flex flex-col gap-[15px]">
-              <h6
-                class="font-head text-[18px] text-[#26921E] uppercase font-bold"
-              >
-                ${estate}
-              </h6>
-              <span class="flex flex-row gap-[10px] text-[14px]"
-                ><img src="./src/icons/location (2).svg" />
-                <p>${property.propertyLocation}</p></span
-              >
-              <div class="flex justify-between w-full">
-                <span
-                  class="flex flex-row text-[14px] justify-center items-center"
-                  ><img src="./src/icons/price.svg" />
-                  <p>₦${formattedPrice}</p></span
-                >
-                <span
-                  class="flex flex-row text-[14px] justify-center items-center"
-                  ><img src="./src/icons/bed.svg" class="w-[30px] h-[30px]" />
-                  <p>${property.propertySize}sqm</p></span
-                >
+            const formattedPrice = formatNumberWithCommas(property.priceNaira);
+            document.getElementById('land-card').innerHTML += `<div class="card property-card group overflow-hidden">
+              <div class="relative overflow-hidden">
+                <img
+                  src="${property.propertyImage}"
+                  class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  alt="${estate}"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                ${isAvailable}
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2">
+                  <i data-lucide="map" class="w-4 h-4 text-accent-600"></i>
+                  <span class="text-sm font-semibold text-accent-600">Land</span>
+                </div>
               </div>
-              <a
-                href="./prop.html?type=${property.propertyType}&title=${estate}"
-                class="w-full flex justify-center items-center"
-              >
-                <button
-                  type="submit"
-                  class="py-4 px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-                >
-                  explore now
-                </button>
-              </a>
-            </div>
-          </div>`
+              <div class="p-6 space-y-4">
+                <h3 class="font-head text-xl text-primary-700 uppercase font-bold group-hover:text-accent-600 transition-colors duration-300">
+                  ${estate}
+                </h3>
+                <div class="flex items-center gap-2 text-gray-600">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-accent-600"></i>
+                  <span class="text-sm">${property.propertyLocation}</span>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="tag" class="w-5 h-5 text-primary-600"></i>
+                    <span class="font-bold text-lg text-primary-800">₦${formattedPrice}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <i data-lucide="ruler" class="w-5 h-5 text-accent-600"></i>
+                    <span class="text-sm font-medium">${property.propertySize} sqm</span>
+                  </div>
+                </div>
+                <a href="./prop.html?type=${property.propertyType}&title=${estate}" class="block mt-4">
+                  <button class="btn-primary w-full justify-center group-hover:scale-105">
+                    <span>View Details</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </a>
+              </div>
+            </div>`
+            setTimeout(() => lucide.createIcons(), 100);
           }
         }
         console.log("done");
@@ -406,5 +375,83 @@
     function formatNumberWithCommas(number) {
       return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+
+    // Handle URL search parameters
+    function handleSearchParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchLocation = urlParams.get('location');
+      const searchType = urlParams.get('type');
+      
+      if (searchLocation || searchType) {
+        // Filter properties based on search parameters
+        filterPropertiesBySearch(searchLocation, searchType);
+        
+        // Update filter buttons to show active state
+        if (searchType) {
+          const filterBtns = document.querySelectorAll('.filter-btn');
+          filterBtns.forEach(btn => btn.classList.remove('active', 'bg-accent-600', 'text-white'));
+          
+          if (searchType === 'land') {
+            filterBtns[2].classList.add('active', 'bg-accent-600', 'text-white');
+          } else {
+            filterBtns[1].classList.add('active', 'bg-accent-600', 'text-white');
+          }
+        }
+      }
+    }
+
+    function filterPropertiesBySearch(location, type) {
+      const residenceSection = document.getElementById('residence');
+      const landSection = document.getElementById('land');
+      const residenceCards = document.querySelectorAll('#residence-card .property-card');
+      const landCards = document.querySelectorAll('#land-card .property-card');
+      
+      // Show/hide sections based on type
+      if (type === 'land') {
+        residenceSection.classList.add('hidden');
+        landSection.classList.remove('hidden');
+      } else if (type === 'house' || type === 'rent') {
+        residenceSection.classList.remove('hidden');
+        landSection.classList.add('hidden');
+      } else {
+        residenceSection.classList.remove('hidden');
+        landSection.classList.remove('hidden');
+      }
+      
+      // Filter by location if specified
+      if (location) {
+        const searchLocationLower = location.toLowerCase();
+        
+        residenceCards.forEach(card => {
+          const cardLocation = card.querySelector('[data-lucide="map-pin"]')?.nextElementSibling?.textContent || '';
+          if (cardLocation.toLowerCase().includes(searchLocationLower)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        landCards.forEach(card => {
+          const cardLocation = card.querySelector('[data-lucide="map-pin"]')?.nextElementSibling?.textContent || '';
+          if (cardLocation.toLowerCase().includes(searchLocationLower)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+      
+      // Scroll to the appropriate section
+      if (type === 'land') {
+        setTimeout(() => landSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+      } else if (type === 'house' || type === 'rent') {
+        setTimeout(() => residenceSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+      }
+    }
+
+    // Wait for properties to load, then handle search params
+    setTimeout(() => {
+      handleSearchParams();
+    }, 1000);
   </script>
 </html>

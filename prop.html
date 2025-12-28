@@ -1,171 +1,174 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ribdex Global Concept Real Estate</title>
+    <title>Property Details | Ribdex Global Real Estate</title>
     <link
       rel="shortcut icon"
       href="./src/icons/RIBDEX.svg"
       type="image/x-icon"
     />
     <link href="/src/css/output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./src/js/script.js" defer></script>
+    <script src="./src/js/animations.js" defer></script>
   </head>
-  <body
-    class="max-w-screen-xlh-[144440px] bg-green-50 relative overflow-x-hidden"
+  <body class="bg-gradient-to-br from-green-50 via-white to-orange-50 relative overflow-x-hidden"
   >
     <!-- Header/nav section -->
-    <header class="z-[19999999] bg-white py-[19px] fixed top-0 right-0 left-0">
-      <!-- logo -->
+    <header class="z-[9999] bg-white/95 backdrop-blur-md py-4 md:py-5 fixed top-0 right-0 left-0 shadow-soft transition-all duration-300">
       <div class="container px-5 flex mx-auto justify-between items-center">
-        <a href="./index.html">
-          <div class="flex justify-start items-center gap-2.5">
-            <img
-              class="w-10 md:w-20 relative"
-              src="/src/icons/RIBDEX.svg"
-              alt="logo"
-            />
+        <a href="./index.html" class="transform hover:scale-105 transition-transform duration-300">
+          <div class="flex justify-start items-center gap-3">
+            <img class="w-12 md:w-20 relative animate-pulse-slow" src="/src/icons/RIBDEX.svg" alt="Ribdex Global Logo" />
+            <span class="hidden lg:block text-primary-700 font-head font-bold text-xl">RIBDEX</span>
           </div>
         </a>
 
         <!-- desktop nav menu -->
         <nav>
-          <div class="hidden md:flex justify-start items-center gap-[17px]">
-            <div class="justify-start items-end gap-[10px] flex">
-              <a
-                href="./index.html#"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                home
-              </a>
-              <a
-                href="./properties.html#residence"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                residence
-              </a>
-              <a
-                href="./properties.html#land"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                land
-              </a>
-              <a
-                href="./index.html#contact"
-                class="text-[#125505] hover:text-[#61C93A] text-xl font-bold font-head uppercase leading-[18px]"
-              >
-                contact
-              </a>
-            </div>
+          <div class="hidden md:flex justify-start items-center gap-8">
+            <a href="./index.html#" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              home
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="./properties.html#residence" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              residence
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="./properties.html#land" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              land
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="./index.html#contact" class="text-primary-700 hover:text-accent-600 text-lg font-bold font-head uppercase relative group transition-colors duration-300">
+              contact
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
           </div>
 
           <!-- hamburger menu -->
-          <div id="hamburger-btn" class="md:hidden cursor-pointer">
-            <img src="./src/icons/Frame 38menu.svg" alt="menu-icon" />
-          </div>
+          <button id="hamburger-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+            <i data-lucide="menu" class="w-6 h-6 text-primary-700"></i>
+          </button>
         </nav>
       </div>
 
-      <!-- mobile -->
-      <div
-        id="mobile-menu"
-        class="absolute bg-white bg-opacity-70 top-full left-0 right-0 h-0 overflow-x-hidden flex flex-col justify-start items-start transition-all ease-in-out duration-[10ms]"
-        style="backdrop-filter: blur(10px)"
-      >
-        <div class="justify-start items-start flex flex-col">
-          <a
-            href="./index.html#"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            home
-          </a>
-          <a
-            href="./properties.html#residence"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            residence
-          </a>
-          <a
-            href="./properties.html#land"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            land
-          </a>
-          <a
-            href="./index.html#contact"
-            class="hover:bg-[#61C93A] text-xl font-bold font-head uppercase leading-[18px] px-[20px] py-[16px] w-[100vw] text-[#125505]"
-          >
-            contact
-          </a>
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="absolute glass-effect top-full left-0 right-0 h-0 overflow-hidden flex flex-col justify-start items-start transition-all duration-300 shadow-lg">
+        <div class="w-full flex flex-col bg-white/95 backdrop-blur-md">
+          <a href="./index.html#" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">home</a>
+          <a href="./properties.html#residence" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">residence</a>
+          <a href="./properties.html#land" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 border-b border-gray-100 transition-colors duration-200">land</a>
+          <a href="./index.html#contact" class="hover:bg-primary-50 text-lg font-bold font-head uppercase px-6 py-4 w-full text-primary-700 transition-colors duration-200">contact</a>
         </div>
       </div>
     </header>
 
     <!-- main content -->
-    <main
-      class="container mx-auto pt-[200px] gap-[30px] md:gap[50px] flex flex-col justify-between md:items-start md:flex-row"
-    >
-      <article class="main-article">
+    <main class="pt-28 md:pt-32 pb-20">
+      <div class="container mx-auto px-6">
+        <!-- Property Details Container -->
+        <article id="property-details" class="animate-on-scroll">
+          <!-- Content will be dynamically inserted here -->
+        </article>
         
-      </article>
+        <!-- Application Form Section -->
+        <section class="mt-20 max-w-4xl mx-auto">
+          <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 animate-on-scroll">
+            <div class="text-center mb-8">
+              <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent-100 text-accent-700 rounded-full font-semibold text-sm uppercase mb-4">
+                <i data-lucide="clipboard-check" class="w-4 h-4"></i>
+                <span>Apply Now</span>
+              </div>
+              <h2 class="text-primary-800 text-3xl md:text-4xl font-bold font-head uppercase mb-3">
+                Make Your Reservation
+              </h2>
+              <p class="text-gray-600">Fill out the form below to reserve this property or schedule a visit</p>
+            </div>
+
+            <form id="appForm" class="space-y-6">
+              <input name="property-title" id="property-title" type="hidden" />
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2 text-gray-700 font-semibold font-head text-sm uppercase">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span>Full Name</span>
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    name="full-name"
+                    id="full-name"
+                    class="input-field"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2 text-gray-700 font-semibold font-head text-sm uppercase">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Email Address</span>
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    id="client-email"
+                    class="input-field"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2 text-gray-700 font-semibold font-head text-sm uppercase">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>Phone Number</span>
+                  </label>
+                  <input
+                    required
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    class="input-field"
+                    placeholder="+234 xxx xxx xxxx"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2 text-gray-700 font-semibold font-head text-sm uppercase">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Application Type</span>
+                  </label>
+                  <select
+                    required
+                    class="input-field appearance-none bg-white cursor-pointer"
+                    name="form-type"
+                    id="form-type"
+                  >
+                    <option value="">Select application type</option>
+                    <option value="reservation">Make a Reservation / I'm Interested</option>
+                    <option value="visit">Schedule a Property Visit</option>
+                  </select>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                id="propfrm"
+                class="btn-primary w-full md:w-auto justify-center"
+              >
+                <i data-lucide="send" class="w-5 h-5"></i>
+                <span>Submit Application</span>
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
     </main>
-    
-    <!-- FORMS TO APPLY FOR THE PRPOPERTY -->
-     <div class="container mx-auto">
-       <div class="max-w-[500px] mx-auto px-5">
-         <form
-         id="appForm"
-         class="w-full flex gap-[15px] flex-col items-start justify-between"
-       >
-         <div class="w-full text-center font-head font-bold text-[24px]">Make your Reservation OR Visitation Request</div>
-         <input
-           required
-           type="text"
-           name="full-name"
-           id="full-name"
-           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-           placeholder="Enter your Full Name"
-         />
-         <input
-           required
-           type="text"
-           name="email"
-           id="client-email"
-           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-           placeholder="Enter your Email"
-         />
-         <input
-           required
-           type="text"
-           name="phone-number"
-           id="phone-number"
-           class="w-full bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-           placeholder="Enter your Phone Number"
-         />
-         <input
-           name="property-title"
-           id="property-title"
-           class="hidden"
-         />
-         <select
-           class="w-full md:w-[260px] bg-white px-[20px] py-[10px] placeholder-green-700 text-xl font-medium font-head"
-           name="form-type"
-           id="form-type"
-         >
-           <option value="">Select type Application</option>
-           <option value="reservation">Make a reservation/am interested</option>
-           <option value="visit">A visit to the property</option>
-         </select>
-         <button
-           type="button"
-           id="propfrm"
-           class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-         >
-           Submit Form
-         </button>
-       </form>
-       </div>
 
        
        <!-- dont show contact -->
@@ -358,205 +361,49 @@
       </div>
     </div>
 
-    <!-- copyright -->
-    <div class="w-full bg-[#125505] py-[20px]">
-      <div
-        class="container mx-auto px-[10px] md:px-[105px] flex justify-between items-center"
-      >
-        <span
-          class="text-white text-base md:text-xl font-light font-head uppercase"
-          >© copyright -
-          <p class="copyright-year inline">2023</p></span
-        >
-        <span
-          class="text-white text-base md:text-xl font-light font-head uppercase"
-          >Designed/Developed By:
-          <a href="https://www.facebook.com/Da.EmperorD/" target="_blank"
-            >Emdes Solutions</a
-          ></span
-        >
-        <div class="flex items-center gap-[10px]">
-          <a href="/facebook" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./src/icons/Group 30facbook.svg"
-              alt="facebook"
-              class="w-[20px] md:w-[30px]"
-            />
-          </a>
-          <a href="/twitter" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./src/icons/Group 31Xtwitter.svg"
-              alt="X"
-              class="w-[20px] md:w-[30px]"
-            />
-          </a>
-          <a href="/instagram" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./src/icons/Group 32instagram.svg"
-              alt="instagram"
-              class="w-[20px] md:w-[30px]"
-            />
-          </a>
-          <a
-            href="http://linkedin.com/ribdex"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./src/icons/Group 33linkedin.svg"
-              alt="linkedin"
-              class="w-[20px] md:w-[30px]"
-            />
-          </a>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white">
+      <div class="container mx-auto px-6 py-12">
+        <div class="border-t border-white/10 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/60 text-sm md:text-base font-body">
+              © <span class="copyright-year">2024</span> Ribdex Properties. All rights reserved.
+            </p>
+            <div class="flex items-center gap-4">
+              <a href="/facebook" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="/twitter" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="/instagram" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a href="http://linkedin.com/ribdex" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-accent-600 p-2 rounded-full transition-all duration-300">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
   <style>
-    @media (min-width: 768px) {
-      .hero-content {
-        padding-top: 240px;
-        padding-bottom: 194px;
-      }
-
-      .headline {
-        font-size: 55px;
-        line-height: 98px;
-        padding-bottom: 30px;
-      }
-
-      .search-form {
-        flex-direction: row;
-      }
-
-      .location-input {
-        width: 680px;
-      }
-
-      .property-select {
-        width: 260px;
-      }
-
-      .desktop-search {
-        display: flex;
-      }
-
-      .mobile-search {
-        display: none;
-      }
+    /* Minimal custom styles - most styling is handled by Tailwind */
+    .prose {
+      line-height: 1.75;
     }
-
-    .main-article {
-      margin-bottom: 3rem;
-      width: 100%;
+    
+    .prose strong {
+      font-weight: 700;
     }
-
-    .main-article__figure img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .container--narrow {
-      max-width: 65rem;
-    }
-
-    .prop-hero {
-      position: relative;
-    }
-
-    .headline {
-      color: white;
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding-bottom: 10px;
-      font-family: "Saira Condensed";
-      line-height: 25px;
-    }
-
-    .prop-title {
-      position: absolute;
-      bottom: 50px;
-      font-family: "Saira Condensed";
-      left: 30px;
-      text-shadow: 5px 5px 10px black;
-    }
-
-    /* short info for youtube and other information about the land */
-    .short-info {
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .video-container {
-      width: 100%;
-      max-width: 1000px;
-      height: 204px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container-s {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-    @media screen and (min-width: 768px) {
-      .video-container {
-        height: 450px;
-      }
-    }
-
-    .main-article__figure img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .property-location,
-    .property-info {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      gap: 10px;
-    }
-
-    .property-info {
-      justify-content: space-between;
-    }
-
-    .explore-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .explore-now {
-      padding: 16px 20px;
-      background-color: #f97316;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      border: none;
-      outline: none;
-    }
-
-    .heading,
-    .explore-btn,
-    .property-title {
-      font-family: "Saira Condensed";
+    
+    .prose em {
+      font-style: italic;
     }
   </style>
   <script>
@@ -583,65 +430,93 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   function dispNewProp(data){
-    const formattedPrice = formatNumberWithCommas(data.priceNaira); // Format the price
+    const formattedPrice = formatNumberWithCommas(data.priceNaira);
     const detailData = data.propertyDetails;
     
-    let propUnit;
+    let propUnit, propIcon;
     if(data.propertyType === "land") {
       propUnit = "sqm"
+      propIcon = "ruler"
     } else {
       propUnit = "bedroom"
+      propIcon = "bed-double"
     }
     propTitForm.value = title;
-    let descriptionWithBreaks = detailData.replace(/\n/g, '<br>') // change break line 
-    descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<b style="display: inline">$1</b>') // convert *text* to <b>text</b>
-    descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<i style="display: inline">$1</i>') // convert *text* to <i>text</i>
-    document.querySelector(".main-article").innerHTML = `
-    <div style="width: 90%; padding: 30px; background: white; margin: auto;">
-    <div class="container-s container--narrow flow">
-          <div class="prop-hero">
-            <h1 class="headline prop-title">${title}</h1>
-            <figure class="main-article__figure">
-              <img src="${data.propertyImage}" alt="${title}" />
-            </figure>
-          </div>
+    let descriptionWithBreaks = detailData.replace(/\n/g, '<br>')
+    descriptionWithBreaks = descriptionWithBreaks.replace(/\*(.*?)\*/g, '<strong class="text-primary-700">$1</strong>')
+    descriptionWithBreaks = descriptionWithBreaks.replace(/\_(.*?)\_/g, '<em class="text-accent-600">$1</em>')
+    
+    document.getElementById('property-details').innerHTML = `
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-sm mb-8">
+        <a href="./index.html" class="text-gray-500 hover:text-primary-600 transition-colors">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+        <a href="./properties.html" class="text-gray-500 hover:text-primary-600 transition-colors">Properties</a>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+        <span class="text-primary-700 font-semibold">${title}</span>
+      </nav>
 
-          <div class="short-info">
-            <div class="video-container">
-              <iframe
-                width="100%"
-                height="100%"
-                src="${data.videoLink}"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-            <span class="property-location" style="padding-top: 20px">
-              <img src="./src/icons/location (2).svg" />${data.propertyLocation}
-            </span>
-            <div class="property-info">
-              <span class="property-location"
-                ><img src="./src/icons/price.svg" />₦${formattedPrice}</span
-              >
-              <span class="property-location"
-                ><img src="./src/icons/bed.svg" class="w-[30px] h-[30px]" />${data.propertySize}${propUnit}</span
-              >
-            </div>
+      <!-- Property Title -->
+      <div class="mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold font-head uppercase text-primary-800 mb-4">${title}</h1>
+        <div class="flex flex-wrap items-center gap-6 text-gray-600">
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-5 h-5 text-accent-600"></i>
+            <span class="text-lg">${data.propertyLocation}</span>
           </div>
-
-          <p style="display: inline; width: 90%; margin: auto;"><button
-              type="submit"
-              class="py-4 flex px-5 bg-orange-600 text-white text-xl font-bold font-head uppercase leading-[18px]"
-              style="cursor: none;"
-            >
-              Property Description
-            </button> <br> ${descriptionWithBreaks}</p>
+          <div class="flex items-center gap-2">
+            <i data-lucide="tag" class="w-5 h-5 text-primary-600"></i>
+            <span class="text-2xl font-bold text-primary-800">₦${formattedPrice}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="${propIcon}" class="w-5 h-5 text-accent-600"></i>
+            <span class="text-lg">${data.propertySize} ${propUnit}</span>
+          </div>
         </div>
-        </div>`
+      </div>
+
+      <!-- Property Image -->
+      <div class="rounded-3xl overflow-hidden shadow-2xl mb-12">
+        <img src="${data.propertyImage}" alt="${title}" class="w-full h-[400px] md:h-[600px] object-cover" />
+      </div>
+
+      <!-- Video Section -->
+      ${data.videoLink ? `
+      <div class="bg-white rounded-3xl shadow-xl p-8 mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="bg-accent-100 p-3 rounded-lg">
+            <i data-lucide="video" class="w-6 h-6 text-accent-600"></i>
+          </div>
+          <h2 class="text-2xl font-bold font-head text-primary-800 uppercase">Property Video Tour</h2>
+        </div>
+        <div class="relative w-full rounded-2xl overflow-hidden" style="padding-bottom: 56.25%;">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src="${data.videoLink}"
+            title="Property Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      ` : ''}
+
+      <!-- Property Description -->
+      <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="bg-primary-100 p-3 rounded-lg">
+            <i data-lucide="file-text" class="w-6 h-6 text-primary-600"></i>
+          </div>
+          <h2 class="text-2xl font-bold font-head text-primary-800 uppercase">Property Description</h2>
+        </div>
+        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          ${descriptionWithBreaks}
+        </div>
+      </div>
+    `
+    
+    setTimeout(() => lucide.createIcons(), 100);
   }
 
 // format price to display with ',' - comma
